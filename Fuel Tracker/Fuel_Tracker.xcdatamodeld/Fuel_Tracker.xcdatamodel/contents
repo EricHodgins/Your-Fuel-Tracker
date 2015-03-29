@@ -7,14 +7,14 @@
         <attribute name="oilCost" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="otherCost" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="otherExplained" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="costs" inverseEntity="Vehicle" syncable="YES"/>
+        <relationship name="vehicle" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="costs" inverseEntity="Vehicle" syncable="YES"/>
     </entity>
     <entity name="Vehicle" representedClassName="Vehicle" syncable="YES">
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDistance" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="costs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Costs" inverseName="vehicle" inverseEntity="Costs" syncable="YES"/>
+        <relationship name="costs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Costs" inverseName="vehicle" inverseEntity="Costs" syncable="YES"/>
     </entity>
     <elements>
         <element name="Costs" positionX="-56" positionY="-351" width="128" height="148"/>

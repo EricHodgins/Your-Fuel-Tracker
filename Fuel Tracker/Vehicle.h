@@ -17,6 +17,14 @@
 @property (nonatomic, retain) NSData * imageData;
 @property (nonatomic, retain) NSString * owner;
 @property (nonatomic) int16_t startDistance;
-@property (nonatomic, retain) Costs *costs;
+@property (nonatomic, retain) NSSet *costs;
+@end
+
+@interface Vehicle (CoreDataGeneratedAccessors)
+
+- (void)addCostsObject:(Costs *)value;
+- (void)removeCostsObject:(Costs *)value;
+- (void)addCosts:(NSSet *)values;
+- (void)removeCosts:(NSSet *)values;
 
 @end

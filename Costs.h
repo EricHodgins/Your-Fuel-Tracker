@@ -19,6 +19,14 @@
 @property (nonatomic) float oilCost;
 @property (nonatomic) float otherCost;
 @property (nonatomic, retain) NSString * otherExplained;
-@property (nonatomic, retain) Vehicle *vehicle;
+@property (nonatomic, retain) NSSet *vehicle;
+@end
+
+@interface Costs (CoreDataGeneratedAccessors)
+
+- (void)addVehicleObject:(Vehicle *)value;
+- (void)removeVehicleObject:(Vehicle *)value;
+- (void)addVehicle:(NSSet *)values;
+- (void)removeVehicle:(NSSet *)values;
 
 @end

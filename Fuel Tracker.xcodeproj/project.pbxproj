@@ -10,7 +10,7 @@
 		7A66B0511AC879B9000C7E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0501AC879B9000C7E20 /* main.m */; };
 		7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0531AC879B9000C7E20 /* AppDelegate.m */; };
 		7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */; };
-		7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0591AC879B9000C7E20 /* ViewController.m */; };
+		7A66B05A1AC879B9000C7E20 /* AddVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0591AC879B9000C7E20 /* AddVehicleViewController.m */; };
 		7A66B05D1AC879B9000C7E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B05B1AC879B9000C7E20 /* Main.storyboard */; };
 		7A66B05F1AC879B9000C7E20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B05E1AC879B9000C7E20 /* Images.xcassets */; };
 		7A66B0621AC879B9000C7E20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */; };
@@ -20,8 +20,9 @@
 		7A66B07D1AC8979D000C7E20 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07C1AC8979D000C7E20 /* CoreData.framework */; };
 		7A66B07F1AC897A6000C7E20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07E1AC897A6000C7E20 /* UIKit.framework */; };
 		7A66B0811AC897B0000C7E20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B0801AC897B0000C7E20 /* Foundation.framework */; };
-		7A66B08A1AC8A4FD000C7E20 /* Costs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0891AC8A4FD000C7E20 /* Costs.m */; };
-		7A66B08D1AC8A513000C7E20 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B08C1AC8A513000C7E20 /* Vehicle.m */; };
+		7A66B0901AC8A99D000C7E20 /* Costs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B08F1AC8A99D000C7E20 /* Costs.m */; };
+		7A66B0931AC8A9B4000C7E20 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0921AC8A9B4000C7E20 /* Vehicle.m */; };
+		7A66B0961AC8B2F6000C7E20 /* OwnerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,8 @@
 		7A66B0521AC879B9000C7E20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A66B0531AC879B9000C7E20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7A66B0561AC879B9000C7E20 /* Fuel_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fuel_Tracker.xcdatamodel; sourceTree = "<group>"; };
-		7A66B0581AC879B9000C7E20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7A66B0591AC879B9000C7E20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7A66B0581AC879B9000C7E20 /* AddVehicleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddVehicleViewController.h; sourceTree = "<group>"; };
+		7A66B0591AC879B9000C7E20 /* AddVehicleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddVehicleViewController.m; sourceTree = "<group>"; };
 		7A66B05C1AC879B9000C7E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A66B05E1AC879B9000C7E20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7A66B0611AC879B9000C7E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,10 +56,12 @@
 		7A66B07C1AC8979D000C7E20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7A66B07E1AC897A6000C7E20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A66B0801AC897B0000C7E20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7A66B0881AC8A4FD000C7E20 /* Costs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Costs.h; sourceTree = "<group>"; };
-		7A66B0891AC8A4FD000C7E20 /* Costs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Costs.m; sourceTree = "<group>"; };
-		7A66B08B1AC8A513000C7E20 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
-		7A66B08C1AC8A513000C7E20 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
+		7A66B08E1AC8A99D000C7E20 /* Costs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Costs.h; path = ../Costs.h; sourceTree = "<group>"; };
+		7A66B08F1AC8A99D000C7E20 /* Costs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Costs.m; path = ../Costs.m; sourceTree = "<group>"; };
+		7A66B0911AC8A9B4000C7E20 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		7A66B0921AC8A9B4000C7E20 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
+		7A66B0941AC8B2F6000C7E20 /* OwnerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerTableViewController.h; sourceTree = "<group>"; };
+		7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,16 +115,18 @@
 				7A66B0531AC879B9000C7E20 /* AppDelegate.m */,
 				7A66B0771AC89164000C7E20 /* CoreDataStack.h */,
 				7A66B0781AC89164000C7E20 /* CoreDataStack.m */,
-				7A66B0581AC879B9000C7E20 /* ViewController.h */,
-				7A66B0591AC879B9000C7E20 /* ViewController.m */,
+				7A66B0581AC879B9000C7E20 /* AddVehicleViewController.h */,
+				7A66B0591AC879B9000C7E20 /* AddVehicleViewController.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
+				7A66B0941AC8B2F6000C7E20 /* OwnerTableViewController.h */,
+				7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */,
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
 				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
 				7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */,
-				7A66B08B1AC8A513000C7E20 /* Vehicle.h */,
-				7A66B08C1AC8A513000C7E20 /* Vehicle.m */,
-				7A66B0881AC8A4FD000C7E20 /* Costs.h */,
-				7A66B0891AC8A4FD000C7E20 /* Costs.m */,
+				7A66B0911AC8A9B4000C7E20 /* Vehicle.h */,
+				7A66B0921AC8A9B4000C7E20 /* Vehicle.m */,
+				7A66B08E1AC8A99D000C7E20 /* Costs.h */,
+				7A66B08F1AC8A99D000C7E20 /* Costs.m */,
 				7A66B04E1AC879B9000C7E20 /* Supporting Files */,
 			);
 			path = "Fuel Tracker";
@@ -253,13 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A66B08A1AC8A4FD000C7E20 /* Costs.m in Sources */,
+				7A66B0901AC8A99D000C7E20 /* Costs.m in Sources */,
 				7A66B0791AC89164000C7E20 /* CoreDataStack.m in Sources */,
 				7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */,
-				7A66B08D1AC8A513000C7E20 /* Vehicle.m in Sources */,
+				7A66B0931AC8A9B4000C7E20 /* Vehicle.m in Sources */,
 				7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */,
-				7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */,
+				7A66B05A1AC879B9000C7E20 /* AddVehicleViewController.m in Sources */,
 				7A66B0511AC879B9000C7E20 /* main.m in Sources */,
+				7A66B0961AC8B2F6000C7E20 /* OwnerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

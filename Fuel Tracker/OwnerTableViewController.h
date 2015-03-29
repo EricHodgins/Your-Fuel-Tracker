@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  OwnerTableViewController.h
 //  Fuel Tracker
 //
 //  Created by Eric Hodgins on 2015-03-29.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface OwnerTableViewController : UITableViewController
 
 @end
-

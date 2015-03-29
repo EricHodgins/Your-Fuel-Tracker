@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Owner Table View Controller-->
         <scene sceneID="1YZ-oA-S1Z">
             <objects>
-                <tableViewController id="X65-8Z-hpc" sceneMemberID="viewController">
+                <tableViewController id="X65-8Z-hpc" customClass="OwnerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="54p-Jf-1EP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1215" y="387"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Vehicle View Controller-->
         <scene sceneID="LUd-Wl-WFn">
             <objects>
-                <viewController id="z9E-Au-muT" sceneMemberID="viewController">
+                <viewController id="z9E-Au-muT" customClass="AddVehicleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zFe-MG-ADr"/>
                         <viewControllerLayoutGuide type="bottom" id="tNT-WA-ZUa"/>
@@ -65,16 +65,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5H-NX-EAl">
-                                <rect key="frame" x="16" y="150" width="288" height="213"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-yN-J7K">
+                                <rect key="frame" x="50" y="174" width="220" height="220"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="imageButtonPressed:" destination="z9E-Au-muT" eventType="touchUpInside" id="B7c-Ye-6qq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bD9-6d-tWo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2r2-AX-yjj"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3Oa-3L-ymr"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2r2-AX-yjj">
+                            <connections>
+                                <action selector="cancelWasPressed:" destination="z9E-Au-muT" id="tJa-JE-2fp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3Oa-3L-ymr">
+                            <connections>
+                                <action selector="saveWasPressed:" destination="z9E-Au-muT" id="Gzv-ib-hlv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageButton" destination="xAb-yN-J7K" id="JSq-t9-GqB"/>
+                        <outlet property="ownerName" destination="gbC-Oa-fmb" id="Zsu-kx-fYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvS-dr-ln6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
