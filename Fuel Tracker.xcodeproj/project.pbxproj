@@ -15,6 +15,11 @@
 		7A66B05F1AC879B9000C7E20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B05E1AC879B9000C7E20 /* Images.xcassets */; };
 		7A66B0621AC879B9000C7E20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */; };
 		7A66B06E1AC879B9000C7E20 /* Fuel_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B06D1AC879B9000C7E20 /* Fuel_TrackerTests.m */; };
+		7A66B0791AC89164000C7E20 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0781AC89164000C7E20 /* CoreDataStack.m */; };
+		7A66B07B1AC89793000C7E20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07A1AC89793000C7E20 /* CoreGraphics.framework */; };
+		7A66B07D1AC8979D000C7E20 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07C1AC8979D000C7E20 /* CoreData.framework */; };
+		7A66B07F1AC897A6000C7E20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07E1AC897A6000C7E20 /* UIKit.framework */; };
+		7A66B0811AC897B0000C7E20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B0801AC897B0000C7E20 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,12 @@
 		7A66B0671AC879B9000C7E20 /* Fuel TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fuel TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A66B06C1AC879B9000C7E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A66B06D1AC879B9000C7E20 /* Fuel_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fuel_TrackerTests.m; sourceTree = "<group>"; };
+		7A66B0771AC89164000C7E20 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		7A66B0781AC89164000C7E20 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		7A66B07A1AC89793000C7E20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7A66B07C1AC8979D000C7E20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7A66B07E1AC897A6000C7E20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7A66B0801AC897B0000C7E20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A66B0811AC897B0000C7E20 /* Foundation.framework in Frameworks */,
+				7A66B07F1AC897A6000C7E20 /* UIKit.framework in Frameworks */,
+				7A66B07D1AC8979D000C7E20 /* CoreData.framework in Frameworks */,
+				7A66B07B1AC89793000C7E20 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,10 @@
 		7A66B0421AC879B9000C7E20 = {
 			isa = PBXGroup;
 			children = (
+				7A66B0801AC897B0000C7E20 /* Foundation.framework */,
+				7A66B07E1AC897A6000C7E20 /* UIKit.framework */,
+				7A66B07C1AC8979D000C7E20 /* CoreData.framework */,
+				7A66B07A1AC89793000C7E20 /* CoreGraphics.framework */,
 				7A66B04D1AC879B9000C7E20 /* Fuel Tracker */,
 				7A66B06A1AC879B9000C7E20 /* Fuel TrackerTests */,
 				7A66B04C1AC879B9000C7E20 /* Products */,
@@ -85,6 +104,8 @@
 			children = (
 				7A66B0521AC879B9000C7E20 /* AppDelegate.h */,
 				7A66B0531AC879B9000C7E20 /* AppDelegate.m */,
+				7A66B0771AC89164000C7E20 /* CoreDataStack.h */,
+				7A66B0781AC89164000C7E20 /* CoreDataStack.m */,
 				7A66B0581AC879B9000C7E20 /* ViewController.h */,
 				7A66B0591AC879B9000C7E20 /* ViewController.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
@@ -222,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A66B0791AC89164000C7E20 /* CoreDataStack.m in Sources */,
 				7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */,
 				7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */,
 				7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */,
