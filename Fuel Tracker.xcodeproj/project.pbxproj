@@ -20,6 +20,8 @@
 		7A66B07D1AC8979D000C7E20 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07C1AC8979D000C7E20 /* CoreData.framework */; };
 		7A66B07F1AC897A6000C7E20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B07E1AC897A6000C7E20 /* UIKit.framework */; };
 		7A66B0811AC897B0000C7E20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66B0801AC897B0000C7E20 /* Foundation.framework */; };
+		7A66B0841AC89FB9000C7E20 /* Costs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0831AC89FB9000C7E20 /* Costs.m */; };
+		7A66B0871AC89FCA000C7E20 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0861AC89FCA000C7E20 /* Vehicle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		7A66B07C1AC8979D000C7E20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7A66B07E1AC897A6000C7E20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A66B0801AC897B0000C7E20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7A66B0821AC89FB9000C7E20 /* Costs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Costs.h; sourceTree = "<group>"; };
+		7A66B0831AC89FB9000C7E20 /* Costs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Costs.m; sourceTree = "<group>"; };
+		7A66B0851AC89FCA000C7E20 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vehicle.h; path = ../Vehicle.h; sourceTree = "<group>"; };
+		7A66B0861AC89FCA000C7E20 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vehicle.m; path = ../Vehicle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,10 @@
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
 				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
 				7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */,
+				7A66B0851AC89FCA000C7E20 /* Vehicle.h */,
+				7A66B0861AC89FCA000C7E20 /* Vehicle.m */,
+				7A66B0821AC89FB9000C7E20 /* Costs.h */,
+				7A66B0831AC89FB9000C7E20 /* Costs.m */,
 				7A66B04E1AC879B9000C7E20 /* Supporting Files */,
 			);
 			path = "Fuel Tracker";
@@ -243,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A66B0841AC89FB9000C7E20 /* Costs.m in Sources */,
 				7A66B0791AC89164000C7E20 /* CoreDataStack.m in Sources */,
 				7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */,
+				7A66B0871AC89FCA000C7E20 /* Vehicle.m in Sources */,
 				7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */,
 				7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */,
 				7A66B0511AC879B9000C7E20 /* main.m in Sources */,
