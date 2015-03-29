@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A66B0511AC879B9000C7E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0501AC879B9000C7E20 /* main.m */; };
+		7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0531AC879B9000C7E20 /* AppDelegate.m */; };
+		7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */; };
+		7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0591AC879B9000C7E20 /* ViewController.m */; };
+		7A66B05D1AC879B9000C7E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B05B1AC879B9000C7E20 /* Main.storyboard */; };
+		7A66B05F1AC879B9000C7E20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B05E1AC879B9000C7E20 /* Images.xcassets */; };
+		7A66B0621AC879B9000C7E20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */; };
+		7A66B06E1AC879B9000C7E20 /* Fuel_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B06D1AC879B9000C7E20 /* Fuel_TrackerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A66B0681AC879B9000C7E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A66B0431AC879B9000C7E20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A66B04A1AC879B9000C7E20;
+			remoteInfo = "Fuel Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A66B04B1AC879B9000C7E20 /* Fuel Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fuel Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A66B04F1AC879B9000C7E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A66B0501AC879B9000C7E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A66B0521AC879B9000C7E20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7A66B0531AC879B9000C7E20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7A66B0561AC879B9000C7E20 /* Fuel_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fuel_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		7A66B0581AC879B9000C7E20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7A66B0591AC879B9000C7E20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7A66B05C1AC879B9000C7E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A66B05E1AC879B9000C7E20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7A66B0611AC879B9000C7E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7A66B0671AC879B9000C7E20 /* Fuel TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fuel TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A66B06C1AC879B9000C7E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A66B06D1AC879B9000C7E20 /* Fuel_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fuel_TrackerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A66B0481AC879B9000C7E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A66B0641AC879B9000C7E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A66B0421AC879B9000C7E20 = {
+			isa = PBXGroup;
+			children = (
+				7A66B04D1AC879B9000C7E20 /* Fuel Tracker */,
+				7A66B06A1AC879B9000C7E20 /* Fuel TrackerTests */,
+				7A66B04C1AC879B9000C7E20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A66B04C1AC879B9000C7E20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B04B1AC879B9000C7E20 /* Fuel Tracker.app */,
+				7A66B0671AC879B9000C7E20 /* Fuel TrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A66B04D1AC879B9000C7E20 /* Fuel Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B0521AC879B9000C7E20 /* AppDelegate.h */,
+				7A66B0531AC879B9000C7E20 /* AppDelegate.m */,
+				7A66B0581AC879B9000C7E20 /* ViewController.h */,
+				7A66B0591AC879B9000C7E20 /* ViewController.m */,
+				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
+				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
+				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
+				7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */,
+				7A66B04E1AC879B9000C7E20 /* Supporting Files */,
+			);
+			path = "Fuel Tracker";
+			sourceTree = "<group>";
+		};
+		7A66B04E1AC879B9000C7E20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B04F1AC879B9000C7E20 /* Info.plist */,
+				7A66B0501AC879B9000C7E20 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A66B06A1AC879B9000C7E20 /* Fuel TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B06D1AC879B9000C7E20 /* Fuel_TrackerTests.m */,
+				7A66B06B1AC879B9000C7E20 /* Supporting Files */,
+			);
+			path = "Fuel TrackerTests";
+			sourceTree = "<group>";
+		};
+		7A66B06B1AC879B9000C7E20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A66B06C1AC879B9000C7E20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A66B04A1AC879B9000C7E20 /* Fuel Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A66B0711AC879B9000C7E20 /* Build configuration list for PBXNativeTarget "Fuel Tracker" */;
+			buildPhases = (
+				7A66B0471AC879B9000C7E20 /* Sources */,
+				7A66B0481AC879B9000C7E20 /* Frameworks */,
+				7A66B0491AC879B9000C7E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fuel Tracker";
+			productName = "Fuel Tracker";
+			productReference = 7A66B04B1AC879B9000C7E20 /* Fuel Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A66B0661AC879B9000C7E20 /* Fuel TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A66B0741AC879B9000C7E20 /* Build configuration list for PBXNativeTarget "Fuel TrackerTests" */;
+			buildPhases = (
+				7A66B0631AC879B9000C7E20 /* Sources */,
+				7A66B0641AC879B9000C7E20 /* Frameworks */,
+				7A66B0651AC879B9000C7E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A66B0691AC879B9000C7E20 /* PBXTargetDependency */,
+			);
+			name = "Fuel TrackerTests";
+			productName = "Fuel TrackerTests";
+			productReference = 7A66B0671AC879B9000C7E20 /* Fuel TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A66B0431AC879B9000C7E20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Eric Hodgins";
+				TargetAttributes = {
+					7A66B04A1AC879B9000C7E20 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					7A66B0661AC879B9000C7E20 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 7A66B04A1AC879B9000C7E20;
+					};
+				};
+			};
+			buildConfigurationList = 7A66B0461AC879B9000C7E20 /* Build configuration list for PBXProject "Fuel Tracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A66B0421AC879B9000C7E20;
+			productRefGroup = 7A66B04C1AC879B9000C7E20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A66B04A1AC879B9000C7E20 /* Fuel Tracker */,
+				7A66B0661AC879B9000C7E20 /* Fuel TrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A66B0491AC879B9000C7E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A66B05D1AC879B9000C7E20 /* Main.storyboard in Resources */,
+				7A66B0621AC879B9000C7E20 /* LaunchScreen.xib in Resources */,
+				7A66B05F1AC879B9000C7E20 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A66B0651AC879B9000C7E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A66B0471AC879B9000C7E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */,
+				7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */,
+				7A66B05A1AC879B9000C7E20 /* ViewController.m in Sources */,
+				7A66B0511AC879B9000C7E20 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A66B0631AC879B9000C7E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A66B06E1AC879B9000C7E20 /* Fuel_TrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A66B0691AC879B9000C7E20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A66B04A1AC879B9000C7E20 /* Fuel Tracker */;
+			targetProxy = 7A66B0681AC879B9000C7E20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A66B05B1AC879B9000C7E20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A66B05C1AC879B9000C7E20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A66B0611AC879B9000C7E20 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A66B06F1AC879B9000C7E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7A66B0701AC879B9000C7E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A66B0721AC879B9000C7E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Fuel Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7A66B0731AC879B9000C7E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Fuel Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7A66B0751AC879B9000C7E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Fuel TrackerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuel Tracker.app/Fuel Tracker";
+			};
+			name = Debug;
+		};
+		7A66B0761AC879B9000C7E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Fuel TrackerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuel Tracker.app/Fuel Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A66B0461AC879B9000C7E20 /* Build configuration list for PBXProject "Fuel Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A66B06F1AC879B9000C7E20 /* Debug */,
+				7A66B0701AC879B9000C7E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A66B0711AC879B9000C7E20 /* Build configuration list for PBXNativeTarget "Fuel Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A66B0721AC879B9000C7E20 /* Debug */,
+				7A66B0731AC879B9000C7E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7A66B0741AC879B9000C7E20 /* Build configuration list for PBXNativeTarget "Fuel TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A66B0751AC879B9000C7E20 /* Debug */,
+				7A66B0761AC879B9000C7E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A66B0561AC879B9000C7E20 /* Fuel_Tracker.xcdatamodel */,
+			);
+			currentVersion = 7A66B0561AC879B9000C7E20 /* Fuel_Tracker.xcdatamodel */;
+			path = Fuel_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7A66B0431AC879B9000C7E20 /* Project object */;
+}
