@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Vehicle;
 
 @interface Costs : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSNumber * gasCost;
-@property (nonatomic, retain) NSNumber * odometerReading;
-@property (nonatomic, retain) NSNumber * oilCost;
-@property (nonatomic, retain) NSNumber * otherCost;
+@property (nonatomic) NSTimeInterval date;
+@property (nonatomic) float gasCost;
+@property (nonatomic) int16_t odometerReading;
+@property (nonatomic) float oilCost;
+@property (nonatomic) float otherCost;
 @property (nonatomic, retain) NSString * otherExplained;
-@property (nonatomic, retain) NSManagedObject *vehicle;
+@property (nonatomic, retain) Vehicle *vehicle;
 
 @end

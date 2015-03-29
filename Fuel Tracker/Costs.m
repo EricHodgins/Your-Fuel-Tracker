@@ -7,6 +7,7 @@
 //
 
 #import "Costs.h"
+#import "Vehicle.h"
 
 
 @implementation Costs

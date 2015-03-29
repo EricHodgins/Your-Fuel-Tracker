@@ -11,13 +11,13 @@
     </entity>
     <entity name="Vehicle" representedClassName="Vehicle" syncable="YES">
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDistance" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="costs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Costs" inverseName="vehicle" inverseEntity="Costs" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Costs" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Costs" positionX="-56" positionY="-351" width="128" height="148"/>
         <element name="Vehicle" positionX="-54" positionY="-9" width="128" height="118"/>
     </elements>
 </model>

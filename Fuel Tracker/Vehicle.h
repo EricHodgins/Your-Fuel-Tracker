@@ -13,10 +13,10 @@
 
 @interface Vehicle : NSManagedObject
 
-@property (nonatomic, retain) NSDate * dateAdded;
+@property (nonatomic) NSTimeInterval dateAdded;
 @property (nonatomic, retain) NSData * imageData;
 @property (nonatomic, retain) NSString * owner;
-@property (nonatomic, retain) NSNumber * startDistance;
+@property (nonatomic) int16_t startDistance;
 @property (nonatomic, retain) Costs *costs;
 
 @end
