@@ -1,0 +1,25 @@
+//
+//  OwnerTableViewCell.m
+//  Fuel Tracker
+//
+//  Created by Eric Hodgins on 2015-03-29.
+//  Copyright (c) 2015 Eric Hodgins. All rights reserved.
+//
+
+#import "OwnerTableViewCell.h"
+
+@implementation OwnerTableViewCell
+
+
+
+-(void)configureCellForEntry:(Vehicle *)entry {
+    if (entry.owner) {
+        self.ownerName.text = entry.owner;
+    }
+    
+    if (entry.imageData) {
+        self.mainImageView.image = [UIImage imageWithData:entry.imageData];
+    }
+}
+
+@end

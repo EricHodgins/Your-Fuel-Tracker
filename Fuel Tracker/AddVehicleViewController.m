@@ -49,7 +49,7 @@
     Vehicle *vehicle = [NSEntityDescription insertNewObjectForEntityForName:@"Vehicle" inManagedObjectContext:coreDataStack.managedObjectContext];
     
     vehicle.owner = self.ownerName.text;
-    vehicle.dateAdded = [[NSDate alloc] timeIntervalSince1970];
+    vehicle.dateAdded = [[NSDate date] timeIntervalSince1970];
     
     if (self.pickedImage != nil) {
         vehicle.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.1);
