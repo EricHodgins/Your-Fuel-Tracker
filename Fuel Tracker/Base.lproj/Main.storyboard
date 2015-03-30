@@ -33,7 +33,7 @@
                                 <connections>
                                     <outlet property="mainImageView" destination="JZH-AH-HNL" id="b1P-oI-CWb"/>
                                     <outlet property="ownerName" destination="FhF-Wp-RBW" id="uPM-DY-YER"/>
-                                    <segue destination="Hwr-1j-VAb" kind="push" id="1pL-pg-4qQ"/>
+                                    <segue destination="Hwr-1j-VAb" kind="push" identifier="showVehicleInfo" id="1pL-pg-4qQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="2694" y="1104"/>
         </scene>
-        <!--View Controller-->
+        <!--Vehicle Info View Controller-->
         <scene sceneID="RuP-gV-BB1">
             <objects>
-                <viewController id="5hB-0c-NJQ" sceneMemberID="viewController">
+                <viewController id="5hB-0c-NJQ" customClass="VehicleInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xS-E7-NCK"/>
                         <viewControllerLayoutGuide type="bottom" id="QCX-QD-5hy"/>

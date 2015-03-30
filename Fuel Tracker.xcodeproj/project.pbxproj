@@ -24,6 +24,7 @@
 		7A66B0931AC8A9B4000C7E20 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0921AC8A9B4000C7E20 /* Vehicle.m */; };
 		7A66B0961AC8B2F6000C7E20 /* OwnerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */; };
 		7A66B0991AC8F371000C7E20 /* OwnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0981AC8F371000C7E20 /* OwnerTableViewCell.m */; };
+		7A66B09C1AC900FA000C7E20 /* VehicleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B09B1AC900FA000C7E20 /* VehicleInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerTableViewController.m; sourceTree = "<group>"; };
 		7A66B0971AC8F371000C7E20 /* OwnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerTableViewCell.h; sourceTree = "<group>"; };
 		7A66B0981AC8F371000C7E20 /* OwnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerTableViewCell.m; sourceTree = "<group>"; };
+		7A66B09A1AC900FA000C7E20 /* VehicleInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VehicleInfoViewController.h; path = ../VehicleInfoViewController.h; sourceTree = "<group>"; };
+		7A66B09B1AC900FA000C7E20 /* VehicleInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VehicleInfoViewController.m; path = ../VehicleInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */,
 				7A66B0971AC8F371000C7E20 /* OwnerTableViewCell.h */,
 				7A66B0981AC8F371000C7E20 /* OwnerTableViewCell.m */,
+				7A66B09A1AC900FA000C7E20 /* VehicleInfoViewController.h */,
+				7A66B09B1AC900FA000C7E20 /* VehicleInfoViewController.m */,
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
 				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
 				7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */,
@@ -270,6 +275,7 @@
 				7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */,
 				7A66B0991AC8F371000C7E20 /* OwnerTableViewCell.m in Sources */,
 				7A66B05A1AC879B9000C7E20 /* AddVehicleViewController.m in Sources */,
+				7A66B09C1AC900FA000C7E20 /* VehicleInfoViewController.m in Sources */,
 				7A66B0511AC879B9000C7E20 /* main.m in Sources */,
 				7A66B0961AC8B2F6000C7E20 /* OwnerTableViewController.m in Sources */,
 			);
