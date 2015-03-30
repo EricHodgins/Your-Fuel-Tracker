@@ -65,8 +65,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-yN-J7K">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-yN-J7K">
                                 <rect key="frame" x="50" y="174" width="220" height="220"/>
+                                <color key="backgroundColor" red="0.72605203559999998" green="0.85130889750000005" blue="0.91015625" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Select Image"/>
                                 <connections>
                                     <action selector="imageButtonPressed:" destination="z9E-Au-muT" eventType="touchUpInside" id="B7c-Ye-6qq"/>

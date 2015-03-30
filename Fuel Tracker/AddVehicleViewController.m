@@ -69,6 +69,7 @@
 //        [self.imageButton setImage:[UIImage imageNamed:@"background-1"] forState:UIControlStateNormal];
     } else {
         [self.imageButton setImage:pickedImage forState:UIControlStateNormal];
+        self.imageButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
 }
 
