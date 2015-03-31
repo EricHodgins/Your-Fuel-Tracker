@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A23F2191ACA398E00033549 /* EntriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F2181ACA398E00033549 /* EntriesTableViewController.m */; };
 		7A66B0511AC879B9000C7E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0501AC879B9000C7E20 /* main.m */; };
 		7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0531AC879B9000C7E20 /* AppDelegate.m */; };
 		7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A23F2171ACA398E00033549 /* EntriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntriesTableViewController.h; sourceTree = "<group>"; };
+		7A23F2181ACA398E00033549 /* EntriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntriesTableViewController.m; sourceTree = "<group>"; };
 		7A66B04B1AC879B9000C7E20 /* Fuel Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fuel Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A66B04F1AC879B9000C7E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A66B0501AC879B9000C7E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				7A66B0581AC879B9000C7E20 /* AddVehicleViewController.h */,
 				7A66B0591AC879B9000C7E20 /* AddVehicleViewController.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
+				7A23F2171ACA398E00033549 /* EntriesTableViewController.h */,
+				7A23F2181ACA398E00033549 /* EntriesTableViewController.m */,
 				7A66B0941AC8B2F6000C7E20 /* OwnerTableViewController.h */,
 				7A66B0951AC8B2F6000C7E20 /* OwnerTableViewController.m */,
 				7A66B0971AC8F371000C7E20 /* OwnerTableViewCell.h */,
@@ -278,6 +283,7 @@
 				7A66B09C1AC900FA000C7E20 /* VehicleInfoViewController.m in Sources */,
 				7A66B0511AC879B9000C7E20 /* main.m in Sources */,
 				7A66B0961AC8B2F6000C7E20 /* OwnerTableViewController.m in Sources */,
+				7A23F2191ACA398E00033549 /* EntriesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +474,7 @@
 				7A66B0731AC879B9000C7E20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A66B0741AC879B9000C7E20 /* Build configuration list for PBXNativeTarget "Fuel TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +483,7 @@
 				7A66B0761AC879B9000C7E20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

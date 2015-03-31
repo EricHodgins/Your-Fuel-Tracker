@@ -22,6 +22,7 @@
     
     self.tabBarController.title = self.vehicle.owner;
     NSLog(@"%@ is the vehicle owner.", self.vehicle.owner);
+    NSLog(@"Cost object: %@", self.vehicle.costs);
 
 }
 
