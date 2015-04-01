@@ -11,6 +11,8 @@
 #import "Vehicle.h"
 #import "OwnerTableViewCell.h"
 
+#import "VehicleInfoViewController.h"
+
 
 
 @interface OwnerTableViewController () <NSFetchedResultsControllerDelegate>
@@ -153,9 +155,31 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showVehicleInfo"]) {
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        UITabBarController *tabBarController = segue.destinationViewController;
+        UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+        
+        VehicleInfoViewController *vehicleInfo = [[navigationController viewControllers] objectAtIndex:0];
+        vehicleInfo.vehicle = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end
