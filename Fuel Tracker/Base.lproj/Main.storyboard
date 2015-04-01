@@ -4,16 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Owner Table View Controller-->
         <scene sceneID="1YZ-oA-S1Z">
             <objects>
-                <tableViewController id="X65-8Z-hpc" sceneMemberID="viewController">
+                <tableViewController id="X65-8Z-hpc" customClass="OwnerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="54p-Jf-1EP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="drD-Hh-LOc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="drD-Hh-LOc" customClass="OwnerTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drD-Hh-LOc" id="g9R-eQ-dpE">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -30,6 +30,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="mainImageView" destination="JZH-AH-HNL" id="TYT-26-lQI"/>
+                                    <outlet property="ownerName" destination="FhF-Wp-RBW" id="HOH-Zv-B7b"/>
                                     <segue destination="Wjf-L7-Myf" kind="push" identifier="showVehicleInfo" id="nuP-2a-Zmg"/>
                                 </connections>
                             </tableViewCell>
@@ -148,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="2258" y="1145"/>
         </scene>
-        <!--Item 1-->
+        <!--Info-->
         <scene sceneID="RZW-5u-ehV">
             <objects>
-                <viewController id="36N-Y2-4GM" sceneMemberID="viewController">
+                <viewController id="36N-Y2-4GM" customClass="VehicleInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eYn-fV-54Y"/>
                         <viewControllerLayoutGuide type="bottom" id="9eT-jz-pXR"/>
@@ -161,7 +163,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="q3L-Ka-Zwn"/>
+                    <tabBarItem key="tabBarItem" title="Info" id="q3L-Ka-Zwn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyG-Rx-EFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

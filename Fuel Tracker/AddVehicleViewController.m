@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)cancelWasPressed:(id)sender {
@@ -36,6 +35,8 @@
     } else {
         [self insertVehicleEntry];
     }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) insertVehicleEntry {
