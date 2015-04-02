@@ -7,8 +7,11 @@
 //
 
 #import "EntriesTableViewController.h"
+#import "AddEntryViewController.h"
 
 @interface EntriesTableViewController ()
+
+@property (nonatomic, strong) UIBarButtonItem *addButtonItem;
 
 @end
 
@@ -16,17 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Table Entry owner is: %@", self.vehicle.owner);
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(moveToEntryViewController)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.tabBarController.navigationController.navigationBarHidden = NO;
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButtonItem;
+}
+
+- (void)moveToEntryViewController {
+    [self performSegueWithIdentifier:@"addEntry" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -87,14 +94,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"addEntry"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
+        addEntryController.vehicle = self.vehicle;
+    }
 }
-*/
+
 
 @end

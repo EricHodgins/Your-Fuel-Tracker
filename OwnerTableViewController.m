@@ -12,6 +12,7 @@
 #import "OwnerTableViewCell.h"
 
 #import "VehicleInfoViewController.h"
+#import "EntriesTableViewController.h"
 
 
 
@@ -158,12 +159,19 @@
     if ([segue.identifier isEqualToString:@"showVehicleInfo"]) {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Vehicle *vehicle = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         UITabBarController *tabBarController = segue.destinationViewController;
-        UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+        UINavigationController *infoNavigationController = [[tabBarController viewControllers] objectAtIndex:0];
         
-        VehicleInfoViewController *vehicleInfo = [[navigationController viewControllers] objectAtIndex:0];
-        vehicleInfo.vehicle = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        VehicleInfoViewController *vehicleInfo = [[infoNavigationController viewControllers] objectAtIndex:0];
+        vehicleInfo.vehicle = vehicle;
+        
+        UINavigationController *entriesNavController = [[tabBarController viewControllers] objectAtIndex:2];
+        EntriesTableViewController *entriesController = [[entriesNavController viewControllers] objectAtIndex:0];
+        entriesController.vehicle = vehicle;
+        
+        
     }
     
 }

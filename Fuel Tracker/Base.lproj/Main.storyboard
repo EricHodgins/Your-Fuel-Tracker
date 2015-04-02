@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="2790" y="1145"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Entry View Controller-->
         <scene sceneID="Izd-yv-dlD">
             <objects>
-                <viewController id="HYm-Qv-sCs" sceneMemberID="viewController">
+                <viewController id="HYm-Qv-sCs" customClass="AddEntryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a2x-MN-zhi"/>
                         <viewControllerLayoutGuide type="bottom" id="vTI-oZ-yTs"/>
@@ -168,11 +168,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gas Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-aD-N2o">
-                                <rect key="frame" x="16" y="101" width="145" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Odometer Reading" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-Dn-V8L">
                                 <rect key="frame" x="16" y="152" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -184,10 +179,31 @@
                                     <!--2015-04-02 03:08:23 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gas Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-aD-N2o">
+                                <rect key="frame" x="16" y="101" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EgA-3d-OId"/>
+                    <navigationItem key="navigationItem" id="EgA-3d-OId">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JOk-Dj-3bN">
+                            <connections>
+                                <action selector="cancelWasPressed:" destination="HYm-Qv-sCs" id="tob-9Q-GtO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="e5W-2W-y6n">
+                            <connections>
+                                <action selector="doneWasPressed:" destination="HYm-Qv-sCs" id="DSp-RJ-jba"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="sZI-Yp-FPA" id="Spp-y8-EpO"/>
+                        <outlet property="gasCostTextField" destination="Yyw-aD-N2o" id="zDN-d3-E9F"/>
+                        <outlet property="odometerTextField" destination="o5l-Dn-V8L" id="e53-J0-af5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uES-GI-Bp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
