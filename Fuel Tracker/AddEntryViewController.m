@@ -7,6 +7,7 @@
 //
 
 #import "AddEntryViewController.h"
+#import "CoreDataStack.h"
 
 @interface AddEntryViewController ()
 
@@ -17,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"AddEntry Owner: %@", self.vehicle.owner);
 }
 
 - (IBAction)cancelWasPressed:(id)sender {
@@ -39,6 +39,14 @@
 }
 
 - (void) addEntry {
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    Costs *costs = [NSEntityDescription insertNewObjectForEntityForName:@"Costs" inManagedObjectContext:coreDataStack.managedObjectContext];
+    costs.gasCost = self.gasCostTextField.text.floatValue;
+    costs.odometerReading = self.odometerTextField.text.floatValue;
+    costs.date = [[_datePicker date] timeIntervalSince1970];
+    
+    [self.vehicle addCostsObject:costs];
+    [coreDataStack saveContext];
     
 }
 

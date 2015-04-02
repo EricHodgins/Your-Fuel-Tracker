@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"The owner is: %@", self.vehicle.owner);
 }
 
 - (void)didReceiveMemoryWarning {
