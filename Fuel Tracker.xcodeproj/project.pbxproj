@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A1FEAA91ACCE73200E3E005 /* EntriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */; };
+		7A1FEAAC1ACCEA5500E3E005 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FEAAB1ACCEA5500E3E005 /* AddEntryViewController.m */; };
 		7A23F21E1ACA561F00033549 /* AddVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F21D1ACA561E00033549 /* AddVehicleViewController.m */; };
 		7A23F2211ACA57B900033549 /* Costs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F2201ACA57B900033549 /* Costs.m */; };
 		7A23F2241ACA57D000033549 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F2231ACA57D000033549 /* Vehicle.m */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		7A1FEAA71ACCE73200E3E005 /* EntriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntriesTableViewController.h; sourceTree = "<group>"; };
 		7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntriesTableViewController.m; sourceTree = "<group>"; };
+		7A1FEAAA1ACCEA5500E3E005 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
+		7A1FEAAB1ACCEA5500E3E005 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		7A23F21C1ACA561E00033549 /* AddVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVehicleViewController.h; sourceTree = "<group>"; };
 		7A23F21D1ACA561E00033549 /* AddVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVehicleViewController.m; sourceTree = "<group>"; };
 		7A23F21F1ACA57B900033549 /* Costs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Costs.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				7A2405761ACBAF460046E0ED /* VehicleInfoViewController.h */,
 				7A2405771ACBAF460046E0ED /* VehicleInfoViewController.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
+				7A1FEAAA1ACCEA5500E3E005 /* AddEntryViewController.h */,
+				7A1FEAAB1ACCEA5500E3E005 /* AddEntryViewController.m */,
 				7A1FEAA71ACCE73200E3E005 /* EntriesTableViewController.h */,
 				7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */,
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A23F2211ACA57B900033549 /* Costs.m in Sources */,
+				7A1FEAAC1ACCEA5500E3E005 /* AddEntryViewController.m in Sources */,
 				7A66B0791AC89164000C7E20 /* CoreDataStack.m in Sources */,
 				7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */,
 				7A23F2241ACA57D000033549 /* Vehicle.m in Sources */,

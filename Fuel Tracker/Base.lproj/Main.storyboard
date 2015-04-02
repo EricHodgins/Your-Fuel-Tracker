@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="2258" y="387"/>
         </scene>
-        <!--Item-->
+        <!--Entries Table View Controller-->
         <scene sceneID="sk0-sY-gVM">
             <objects>
-                <tableViewController id="Kzg-7S-OOf" sceneMemberID="viewController">
+                <tableViewController id="Kzg-7S-OOf" customClass="EntriesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mzo-wC-W1T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,11 +144,54 @@
                             <outlet property="delegate" destination="Kzg-7S-OOf" id="HTU-NB-Rx8"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="N1V-lJ-AKU"/>
+                    <navigationItem key="navigationItem" id="BLT-Ha-DvI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RIN-a6-F1r">
+                            <connections>
+                                <segue destination="0AO-8C-fIh" kind="modal" identifier="addEntry" id="hfo-bE-DrC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMl-rU-MiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="1145"/>
+            <point key="canvasLocation" x="2790" y="1145"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Izd-yv-dlD">
+            <objects>
+                <viewController id="HYm-Qv-sCs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a2x-MN-zhi"/>
+                        <viewControllerLayoutGuide type="bottom" id="vTI-oZ-yTs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JZX-VA-pqt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gas Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-aD-N2o">
+                                <rect key="frame" x="16" y="101" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Odometer Reading" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-Dn-V8L">
+                                <rect key="frame" x="16" y="152" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-Yp-FPA">
+                                <rect key="frame" x="0.0" y="297" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="449636903.21703601">
+                                    <!--2015-04-02 03:08:23 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EgA-3d-OId"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uES-GI-Bp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="1145"/>
         </scene>
         <!--Vehicle Info View Controller-->
         <scene sceneID="RZW-5u-ehV">
@@ -239,7 +282,7 @@
                     <connections>
                         <segue destination="Q0I-Cu-4og" kind="relationship" relationship="viewControllers" id="IeX-ZD-nqO"/>
                         <segue destination="WWa-J2-9Jo" kind="relationship" relationship="viewControllers" id="reY-P7-NVk"/>
-                        <segue destination="Kzg-7S-OOf" kind="relationship" relationship="viewControllers" id="Lvt-Lo-78o"/>
+                        <segue destination="yay-NU-h4N" kind="relationship" relationship="viewControllers" id="Lvt-Lo-78o"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqh-BE-Bh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,6 +343,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfZ-6k-kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2258" y="-289"/>
+        </scene>
+        <!--Entries-->
+        <scene sceneID="bIi-i4-JGg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yay-NU-h4N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Entries" id="N1V-lJ-AKU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFr-se-eSh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kzg-7S-OOf" kind="relationship" relationship="rootViewController" id="38T-EF-Cfs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOm-Yt-G7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="1145"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lbm-wy-WPl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0AO-8C-fIh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDc-fB-Xww">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HYm-Qv-sCs" kind="relationship" relationship="rootViewController" id="Vuz-n5-isR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SII-ul-Vdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="1145"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
