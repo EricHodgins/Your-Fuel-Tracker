@@ -12,5 +12,9 @@
 @interface VehicleInfoViewController : UIViewController
 
 @property (nonatomic, strong) Vehicle *vehicle;
+@property (weak, nonatomic) IBOutlet UITextField *startOdometerTextField;
+@property (weak, nonatomic) IBOutlet UITextField *endOdometerTextField;
+@property (weak, nonatomic) IBOutlet UILabel *totalDistanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalCostLabel;
 
 @end

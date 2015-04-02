@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1FEAA91ACCE73200E3E005 /* EntriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */; };
 		7A23F21E1ACA561F00033549 /* AddVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F21D1ACA561E00033549 /* AddVehicleViewController.m */; };
 		7A23F2211ACA57B900033549 /* Costs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F2201ACA57B900033549 /* Costs.m */; };
 		7A23F2241ACA57D000033549 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A23F2231ACA57D000033549 /* Vehicle.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A1FEAA71ACCE73200E3E005 /* EntriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntriesTableViewController.h; sourceTree = "<group>"; };
+		7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntriesTableViewController.m; sourceTree = "<group>"; };
 		7A23F21C1ACA561E00033549 /* AddVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVehicleViewController.h; sourceTree = "<group>"; };
 		7A23F21D1ACA561E00033549 /* AddVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVehicleViewController.m; sourceTree = "<group>"; };
 		7A23F21F1ACA57B900033549 /* Costs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Costs.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				7A2405761ACBAF460046E0ED /* VehicleInfoViewController.h */,
 				7A2405771ACBAF460046E0ED /* VehicleInfoViewController.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
+				7A1FEAA71ACCE73200E3E005 /* EntriesTableViewController.h */,
+				7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */,
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
 				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
 				7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */,
@@ -278,6 +283,7 @@
 				7A2405781ACBAF460046E0ED /* VehicleInfoViewController.m in Sources */,
 				7A23F21E1ACA561F00033549 /* AddVehicleViewController.m in Sources */,
 				7A2405721ACBA9050046E0ED /* OwnerTableViewController.m in Sources */,
+				7A1FEAA91ACCE73200E3E005 /* EntriesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
