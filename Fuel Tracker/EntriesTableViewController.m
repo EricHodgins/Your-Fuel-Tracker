@@ -68,7 +68,7 @@
     
     Costs *costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSLog(@"gas cost: %f", costs.gasCost);
-    cell.textLabel.text = [NSString stringWithFormat:@"%f", costs.gasCost];
+    cell.textLabel.text = [NSString stringWithFormat:@"Gas:%f   Odometer:%i", costs.gasCost, costs.odometerReading];
     return cell;
 }
 
@@ -77,7 +77,7 @@
 
 #pragma mark - Configure the fetched results controller
 
-- (NSFetchedResultsController *) fetchedResultController {
+- (NSFetchedResultsController *) fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
@@ -85,7 +85,7 @@
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     NSFetchRequest *fetchRequest = [self entryListFetchRequest];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"sectionName" cacheName:nil];
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
@@ -96,7 +96,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Costs"];
     
     //Fetch Only Gas Entries
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"vehicle.owner = %@", self.vehicle.owner];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"vehicle = %@", self.vehicle];
     [fetchRequest setPredicate:predicate];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
@@ -147,7 +147,7 @@
 }
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    Costs *entry = [self.fetchedResultController objectAtIndexPath:indexPath];
+    Costs *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     [[coreDataStack managedObjectContext] deleteObject:entry];
