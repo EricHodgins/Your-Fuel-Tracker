@@ -17,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.gasCostTextField.text = [NSString stringWithFormat:@"%.2f", self.costs.gasCost];
+    self.oilCostTextField.text = [NSString stringWithFormat:@"%.2f", self.costs.oilCost];
+    self.odometerTextField.text = [NSString stringWithFormat:@"%d", self.costs.odometerReading];
+    self.otherCostTextField.text = [NSString stringWithFormat:@"%.2f", self.costs.otherCost];
+    self.describeOtherCostTextField.text = self.costs.otherExplained;
 
 }
 
@@ -35,7 +41,14 @@
 }
 
 -(void) updateEntry {
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    self.costs.gasCost = self.gasCostTextField.text.floatValue;
+    self.costs.oilCost = self.oilCostTextField.text.floatValue;
+    self.costs.otherCost = self.otherCostTextField.text.floatValue;
+    self.costs.otherExplained = self.describeOtherCostTextField.text;
+    self.costs.date = [[self.datePicker date] timeIntervalSince1970];
     
+    [coreDataStack saveContext];
 }
 
 - (void) addEntry {
@@ -43,6 +56,8 @@
     Costs *costs = [NSEntityDescription insertNewObjectForEntityForName:@"Costs" inManagedObjectContext:coreDataStack.managedObjectContext];
     costs.gasCost = self.gasCostTextField.text.floatValue;
     costs.odometerReading = self.odometerTextField.text.floatValue;
+    costs.otherCost = self.otherCostTextField.text.floatValue;
+    costs.otherExplained = self.describeOtherCostTextField.text;
     costs.date = [[_datePicker date] timeIntervalSince1970];
     
     [self.vehicle addCostsObject:costs];

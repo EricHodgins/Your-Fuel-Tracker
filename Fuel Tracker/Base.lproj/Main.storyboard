@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-7l-OLN">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-7l-OLN">
                                 <rect key="frame" x="16" y="196" width="288" height="185"/>
                                 <color key="backgroundColor" red="0.69464434213847359" green="0.94387065800501158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Select Image">
@@ -137,6 +137,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="doR-Hh-rNY" id="wKF-hO-3Ok">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="0AO-8C-fIh" kind="modal" identifier="viewEntry" id="cks-wi-kh7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -169,18 +172,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Odometer Reading" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-Dn-V8L">
-                                <rect key="frame" x="16" y="152" width="145" height="30"/>
+                                <rect key="frame" x="16" y="174" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-Yp-FPA">
-                                <rect key="frame" x="0.0" y="297" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="386" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="449636903.21703601">
                                     <!--2015-04-02 03:08:23 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gas Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-aD-N2o">
-                                <rect key="frame" x="16" y="101" width="145" height="30"/>
+                                <rect key="frame" x="16" y="101" width="135" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Oil Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcN-sg-4Fj">
+                                <rect key="frame" x="169" y="101" width="135" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gas Cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oC8-fb-MbC">
+                                <rect key="frame" x="16" y="72" width="135" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.81035342402573285" blue="0.33435144594512978" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Odometer Reading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-bZ-2wv">
+                                <rect key="frame" x="16" y="145" width="135" height="21"/>
+                                <color key="backgroundColor" red="0.79061890297254156" green="0.87487106384647262" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oil Cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-Am-t2g">
+                                <rect key="frame" x="170" y="72" width="135" height="21"/>
+                                <color key="backgroundColor" red="0.51330720637581095" green="0.49725671268825727" blue="0.5982116409952607" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Costs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K4-lC-GtO">
+                                <rect key="frame" x="16" y="212" width="145" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.89308645605598336" blue="0.90767533269045264" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Describe Other..." translatesAutoresizingMaskIntoConstraints="NO" id="9io-Lw-XQK">
+                                <rect key="frame" x="16" y="241" width="288" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.89308645605598336" blue="0.90767533269045264" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other Cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2j-Bj-RLH">
+                                <rect key="frame" x="169" y="203" width="143" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -201,13 +248,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="sZI-Yp-FPA" id="Spp-y8-EpO"/>
+                        <outlet property="describeOtherCostTextField" destination="9io-Lw-XQK" id="E0P-wJ-bHF"/>
                         <outlet property="gasCostTextField" destination="Yyw-aD-N2o" id="zDN-d3-E9F"/>
                         <outlet property="odometerTextField" destination="o5l-Dn-V8L" id="e53-J0-af5"/>
+                        <outlet property="oilCostTextField" destination="FcN-sg-4Fj" id="Vbq-t2-swG"/>
+                        <outlet property="otherCostTextField" destination="F2j-Bj-RLH" id="z0p-93-iep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uES-GI-Bp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3648" y="1145"/>
+            <point key="canvasLocation" x="3648" y="1138"/>
         </scene>
         <!--Vehicle Info View Controller-->
         <scene sceneID="RZW-5u-ehV">
@@ -384,6 +434,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0AO-8C-fIh" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pe2-Jk-Dqo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDc-fB-Xww">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -403,4 +454,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cks-wi-kh7"/>
+    </inferredMetricsTieBreakers>
 </document>

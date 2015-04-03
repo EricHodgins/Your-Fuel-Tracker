@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *gasCostTextField;
 @property (weak, nonatomic) IBOutlet UITextField *odometerTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *oilCostTextField;
+@property (weak, nonatomic) IBOutlet UITextView *describeOtherCostTextField;
+@property (weak, nonatomic) IBOutlet UITextField *otherCostTextField;
 
 @property(nonatomic, strong) Vehicle *vehicle;
 @property(nonatomic, strong) Costs *costs;

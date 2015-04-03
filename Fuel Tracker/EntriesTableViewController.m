@@ -24,11 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSSet *costs = self.vehicle.costs;
-    for (Costs *cost in costs) {
-        NSLog(@"%f",cost.gasCost);
-    }
-    
     self.addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(moveToEntryViewController)];
     [self.fetchedResultsController performFetch:nil];
     
@@ -56,7 +51,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    NSLog(@"Number of rows in section: %d", [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 
@@ -67,7 +61,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Costs *costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"gas cost: %f", costs.gasCost);
     cell.textLabel.text = [NSString stringWithFormat:@"Gas:%f   Odometer:%i", costs.gasCost, costs.odometerReading];
     return cell;
 }
@@ -122,6 +115,8 @@
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
+        case NSFetchedResultsChangeMove:
+            break;
     }
 }
 
@@ -137,6 +132,11 @@
             
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        
+        case NSFetchedResultsChangeMove:
+            break;
+        case NSFetchedResultsChangeUpdate:
             break;
     }
 }
@@ -170,6 +170,15 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
         addEntryController.vehicle = self.vehicle;
+    }
+    
+    if ([segue.identifier isEqualToString:@"viewEntry"]) {
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
+        addEntryController.vehicle = self.vehicle;
+        addEntryController.costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
 }
 
