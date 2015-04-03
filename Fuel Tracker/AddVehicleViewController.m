@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.imageButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (IBAction)cancelWasPressed:(id)sender {
