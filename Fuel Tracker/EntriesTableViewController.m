@@ -45,7 +45,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"Number of sections: %d", self.fetchedResultsController.sections.count);
     return self.fetchedResultsController.sections.count;
 }
 
@@ -66,6 +65,12 @@
 }
 
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSArray *array = [[[self.fetchedResultsController sections] objectAtIndex:section] objects];
+    
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [NSString stringWithFormat:@"%@", [sectionInfo name]];
+}
 
 
 #pragma mark - Configure the fetched results controller
@@ -78,7 +83,7 @@
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     NSFetchRequest *fetchRequest = [self entryListFetchRequest];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"sectionName" cacheName:nil];
     _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;

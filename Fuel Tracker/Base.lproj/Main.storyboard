@@ -104,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="1215" y="-282"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="s87-yb-IOQ">
             <objects>
                 <viewController id="WWa-J2-9Jo" sceneMemberID="viewController">
@@ -117,11 +117,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="XYE-db-H91"/>
+                    <navigationItem key="navigationItem" id="R5K-Ko-rPR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgF-ag-bzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="387"/>
+            <point key="canvasLocation" x="2790" y="387"/>
         </scene>
         <!--Entries Table View Controller-->
         <scene sceneID="sk0-sY-gVM">
@@ -283,15 +283,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-P8-NRl">
-                                <rect key="frame" x="16" y="233" width="143" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfB-Oo-E9I">
                                 <rect key="frame" x="167" y="233" width="143" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8L-Xe-OKZ">
                                 <rect key="frame" x="16" y="273" width="86" height="21"/>
@@ -305,20 +300,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-Cy-9Yl">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-Cy-9Yl">
                                 <rect key="frame" x="110" y="273" width="194" height="21"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.372189973472413" blue="0.32831285290450951" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbY-yO-Jnj">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbY-yO-Jnj">
                                 <rect key="frame" x="110" y="312" width="194" height="21"/>
                                 <color key="backgroundColor" red="0.7864913969829832" green="0.87843137250000003" blue="0.53708262269203799" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-P8-NRl">
+                                <rect key="frame" x="16" y="233" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -347,7 +347,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Q0I-Cu-4og" kind="relationship" relationship="viewControllers" id="IeX-ZD-nqO"/>
-                        <segue destination="WWa-J2-9Jo" kind="relationship" relationship="viewControllers" id="reY-P7-NVk"/>
+                        <segue destination="n0b-rX-Vsz" kind="relationship" relationship="viewControllers" id="reY-P7-NVk"/>
                         <segue destination="yay-NU-h4N" kind="relationship" relationship="viewControllers" id="Lvt-Lo-78o"/>
                     </connections>
                 </tabBarController>
@@ -447,6 +447,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SII-ul-Vdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3212" y="1145"/>
+        </scene>
+        <!--Summary-->
+        <scene sceneID="9j3-bN-iKy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n0b-rX-Vsz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Summary" id="XYE-db-H91"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55p-Vv-YXT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WWa-J2-9Jo" kind="relationship" relationship="rootViewController" id="UQ6-IE-9q3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtJ-Ff-2nO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="387"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

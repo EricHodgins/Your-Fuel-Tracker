@@ -7,8 +7,13 @@
 //
 
 #import "VehicleInfoViewController.h"
+#import "CoreDataStack.h"
+#import "Costs.h"
 
-@interface VehicleInfoViewController ()
+@interface VehicleInfoViewController () <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) UIBarButtonItem *buttonItem;
 
 @end
 
@@ -16,21 +21,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(makeEditable)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self upDateValues];
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
+    [self.tabBarController.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-/*
-#pragma mark - Navigation
+- (void) upDateValues {
+    self.fetchedResultsController = nil;
+    [self.fetchedResultsController performFetch:nil];
+    
+    Costs *costsEndingObject = [[self.fetchedResultsController fetchedObjects] lastObject];
+    self.endOdometerTextField.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading];
+    
+    self.totalDistanceLabel.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading - self.startOdometerTextField.text.integerValue];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+-(void)makeEditable {
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneWasPressed)];
+}
+
+-(void)doneWasPressed {
+    self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
+}
+
+
+#pragma mark - Fetch Results for ending Odometer Reading
+
+- (NSFetchedResultsController *) fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+    NSFetchRequest *fetchRequest = [self entryListFetchRequest];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+    
+}
+
+- (NSFetchRequest *) entryListFetchRequest {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Costs"];
+    NSLog(@"%@", self.vehicle.owner);
+    //Fetch Only Gas Entries
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"vehicle = %@", self.vehicle];
+    [fetchRequest setPredicate:predicate];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"odometerReading" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    return fetchRequest;
+    
+}
+
+
 
 @end

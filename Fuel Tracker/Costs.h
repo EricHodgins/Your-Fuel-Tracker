@@ -20,4 +20,7 @@
 @property (nonatomic, retain) NSString * otherExplained;
 @property (nonatomic, retain) NSManagedObject *vehicle;
 
+@property(nonatomic, strong) NSString *sectionName;
+
+
 @end
