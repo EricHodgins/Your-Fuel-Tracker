@@ -15,7 +15,7 @@
 		7A2405721ACBA9050046E0ED /* OwnerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2405711ACBA9050046E0ED /* OwnerTableViewController.m */; };
 		7A2405751ACBAACD0046E0ED /* OwnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2405741ACBAACD0046E0ED /* OwnerTableViewCell.m */; };
 		7A2405781ACBAF460046E0ED /* VehicleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2405771ACBAF460046E0ED /* VehicleInfoViewController.m */; };
-		7A2A5F631ACF60E000A7D58F /* calculationCosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A5F621ACF60E000A7D58F /* calculationCosts.m */; };
+		7A2A5F661ACFA80C00A7D58F /* HelperCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A5F651ACFA80C00A7D58F /* HelperCalculations.m */; };
 		7A66B0511AC879B9000C7E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0501AC879B9000C7E20 /* main.m */; };
 		7A66B0541AC879B9000C7E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0531AC879B9000C7E20 /* AppDelegate.m */; };
 		7A66B0571AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B0551AC879B9000C7E20 /* Fuel_Tracker.xcdatamodeld */; };
@@ -57,8 +57,8 @@
 		7A2405741ACBAACD0046E0ED /* OwnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerTableViewCell.m; sourceTree = "<group>"; };
 		7A2405761ACBAF460046E0ED /* VehicleInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInfoViewController.h; sourceTree = "<group>"; };
 		7A2405771ACBAF460046E0ED /* VehicleInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleInfoViewController.m; sourceTree = "<group>"; };
-		7A2A5F611ACF60DF00A7D58F /* calculationCosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculationCosts.h; sourceTree = "<group>"; };
-		7A2A5F621ACF60E000A7D58F /* calculationCosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calculationCosts.m; sourceTree = "<group>"; };
+		7A2A5F641ACFA80C00A7D58F /* HelperCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperCalculations.h; sourceTree = "<group>"; };
+		7A2A5F651ACFA80C00A7D58F /* HelperCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperCalculations.m; sourceTree = "<group>"; };
 		7A66B04B1AC879B9000C7E20 /* Fuel Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fuel Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A66B04F1AC879B9000C7E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A66B0501AC879B9000C7E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 				7A1FEAA81ACCE73200E3E005 /* EntriesTableViewController.m */,
 				7A1FEAAA1ACCEA5500E3E005 /* AddEntryViewController.h */,
 				7A1FEAAB1ACCEA5500E3E005 /* AddEntryViewController.m */,
-				7A2A5F611ACF60DF00A7D58F /* calculationCosts.h */,
-				7A2A5F621ACF60E000A7D58F /* calculationCosts.m */,
+				7A2A5F641ACFA80C00A7D58F /* HelperCalculations.h */,
+				7A2A5F651ACFA80C00A7D58F /* HelperCalculations.m */,
 				7A66B05B1AC879B9000C7E20 /* Main.storyboard */,
 				7A66B05E1AC879B9000C7E20 /* Images.xcassets */,
 				7A66B0601AC879B9000C7E20 /* LaunchScreen.xib */,
@@ -294,8 +294,8 @@
 				7A2405781ACBAF460046E0ED /* VehicleInfoViewController.m in Sources */,
 				7A23F21E1ACA561F00033549 /* AddVehicleViewController.m in Sources */,
 				7A2405721ACBA9050046E0ED /* OwnerTableViewController.m in Sources */,
-				7A2A5F631ACF60E000A7D58F /* calculationCosts.m in Sources */,
 				7A1FEAA91ACCE73200E3E005 /* EntriesTableViewController.m in Sources */,
+				7A2A5F661ACFA80C00A7D58F /* HelperCalculations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

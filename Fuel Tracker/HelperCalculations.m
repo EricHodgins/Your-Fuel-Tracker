@@ -1,15 +1,14 @@
 //
-//  calculationCosts.m
+//  HelperCalculations.m
 //  Fuel Tracker
 //
-//  Created by Eric Hodgins on 2015-04-03.
+//  Created by Eric Hodgins on 2015-04-04.
 //  Copyright (c) 2015 Eric Hodgins. All rights reserved.
 //
 
-#import "CalculationCosts.h"
-#import "Costs.h"
+#import "HelperCalculations.h"
 
-@implementation CalculationCosts
+@implementation HelperCalculations
 
 -(float)calculateTotalGasCost:(NSSet *)costs {
     NSSet *total = costs;
@@ -47,5 +46,14 @@
 -(float)calculateTotalCost:(NSSet *)costs {
     return [self calculateTotalGasCost:costs] + [self calculateTotalOilCost:costs] + [self calculateTotalOtherCost:costs];
 }
+
+-(float)calculateCostPerDistance:(NSSet *)costs startDistance:(int)startDistance endDistance:(int)endDistance {
+    float costPerDistance = [self calculateTotalCost:costs] / (endDistance - startDistance);
+    if (isnan(costPerDistance)) {
+        return 0;
+    }
+    return costPerDistance;
+}
+
 
 @end

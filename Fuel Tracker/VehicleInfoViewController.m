@@ -10,13 +10,15 @@
 #import "CoreDataStack.h"
 #import "Costs.h"
 
-#import "CalculationCosts.h"
+#import "calculationCosts.h"
+#import "HelperCalculations.h"
 
 @interface VehicleInfoViewController () <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) UIBarButtonItem *buttonItem;
-@property (nonatomic, strong) CalculationCosts *calculateCosts;
+@property (nonatomic, strong) HelperCalculations *calculateCosts;
+@property (weak, nonatomic) IBOutlet UILabel *costPerDistanceLabel;
 
 @end
 
@@ -24,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.calculateCosts = [[CalculationCosts alloc] init];
+    self.calculateCosts = [[HelperCalculations alloc] init];
     
     self.startOdometerTextField.enabled = NO;
     self.buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(makeEditable)];
@@ -34,6 +36,7 @@
     [super viewWillAppear:animated];
     [self upDateValues];
     
+    self.endOdometerTextField.enabled = NO;
     self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
     [self.tabBarController.navigationController setNavigationBarHidden:NO animated:NO];
 }
@@ -50,6 +53,7 @@
     self.totalDistanceLabel.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading - self.startOdometerTextField.text.integerValue];
     
     self.totalCostLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateTotalCost:self.vehicle.costs]];
+    self.costPerDistanceLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateCostPerDistance:self.vehicle.costs startDistance:self.startOdometerTextField.text.integerValue endDistance:self.endOdometerTextField.text.integerValue] ];
 
 }
 
@@ -61,10 +65,17 @@
 }
 
 -(void)doneWasPressed {
-    self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
-    [self updateVehicleEntry];
-    [self upDateValues];
-    [self.startOdometerTextField resignFirstResponder];
+    if (self.endOdometerTextField.text.integerValue < self.startOdometerTextField.text.integerValue) {
+        [self makeEditable];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Negative Distance" message:@"You cannot travel backwards." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    } else {
+        self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
+        [self updateVehicleEntry];
+        [self upDateValues];
+        [self.startOdometerTextField resignFirstResponder];
+    }
+    
 }
 
 -(void)updateVehicleEntry {

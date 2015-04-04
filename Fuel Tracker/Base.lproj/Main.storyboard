@@ -72,7 +72,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-7l-OLN">
                                 <rect key="frame" x="16" y="196" width="288" height="185"/>
-                                <color key="backgroundColor" red="0.69464434213847359" green="0.94387065800501158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.34203256475071669" green="0.34576792061611372" blue="0.3260039962791606" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Select Image">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -283,6 +283,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-P8-NRl">
+                                <rect key="frame" x="16" y="233" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfB-Oo-E9I">
                                 <rect key="frame" x="167" y="233" width="143" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -300,6 +305,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost / Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJm-Na-mBe">
+                                <rect key="frame" x="16" y="361" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-Cy-9Yl">
                                 <rect key="frame" x="110" y="273" width="194" height="21"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.372189973472413" blue="0.32831285290450951" alpha="1" colorSpace="calibratedRGB"/>
@@ -314,16 +325,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-P8-NRl">
-                                <rect key="frame" x="16" y="233" width="143" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-Oh-8Nh">
+                                <rect key="frame" x="150" y="361" width="154" height="21"/>
+                                <color key="backgroundColor" red="0.19001507365664363" green="0.85902325236966826" blue="0.47272947990849473" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="m0f-tO-Qt0"/>
                     <connections>
+                        <outlet property="costPerDistanceLabel" destination="bjx-Oh-8Nh" id="5aa-eb-wN4"/>
                         <outlet property="endOdometerTextField" destination="xfB-Oo-E9I" id="WeD-9Q-Cxw"/>
                         <outlet property="startOdometerTextField" destination="ZAo-P8-NRl" id="uc4-EL-p60"/>
                         <outlet property="totalCostLabel" destination="cbY-yO-Jnj" id="pFN-0T-WHR"/>
