@@ -13,6 +13,7 @@
 
 #import "VehicleInfoViewController.h"
 #import "EntriesTableViewController.h"
+#import "SummaryViewController.h"
 
 
 
@@ -171,7 +172,10 @@
         EntriesTableViewController *entriesController = [[entriesNavController viewControllers] objectAtIndex:0];
         entriesController.vehicle = vehicle;
         
-        
+        UINavigationController *summaryNavController = [[tabBarController viewControllers] objectAtIndex:1];
+        SummaryViewController *summaryController = [[summaryNavController viewControllers] objectAtIndex:0];
+        summaryController.vehicle = vehicle;
+    
     }
     
 }

@@ -55,5 +55,29 @@
     return costPerDistance;
 }
 
+-(float)calculateGasPercentage:(NSSet *)costs {
+    float gasPercent = [self calculateTotalGasCost:costs] / [self calculateTotalCost:costs];
+    if (isnan(gasPercent)) {
+        return 0;
+    }
+    return gasPercent * 100;
+}
+
+-(float)calculateOilPercentage:(NSSet *)costs {
+    float oilPercent = [self calculateTotalOilCost:costs] / [self calculateTotalCost:costs];
+    if (isnan(oilPercent)) {
+        return 0;
+    }
+    return oilPercent * 100;
+}
+
+-(float)calculateOtherPercentage:(NSSet *)costs {
+    float otherPercent = [self calculateTotalOtherCost:costs] / [self calculateTotalCost:costs];
+    if (isnan(otherPercent)) {
+        return 0;
+    }
+    
+    return otherPercent * 100;
+}
 
 @end

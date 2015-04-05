@@ -10,7 +10,6 @@
 #import "CoreDataStack.h"
 #import "Costs.h"
 
-#import "calculationCosts.h"
 #import "HelperCalculations.h"
 
 @interface VehicleInfoViewController () <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
@@ -26,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.title = self.vehicle.owner;
     self.calculateCosts = [[HelperCalculations alloc] init];
     
     self.startOdometerTextField.enabled = NO;
