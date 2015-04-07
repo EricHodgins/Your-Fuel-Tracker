@@ -8,6 +8,7 @@
 
 #import "SummaryViewController.h"
 #import "HelperCalculations.h"
+#import "GraphicView.h"
 
 
 @interface SummaryViewController ()
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     
     self.helperCalcCosts = [[HelperCalculations alloc] init];
+    self.pieGraphView.vehicle = self.vehicle;
     
     
 }
@@ -39,7 +41,11 @@
     self.gasPercentage.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateGasPercentage:self.vehicle.costs]];
     self.oilPercentage.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateOilPercentage:self.vehicle.costs]];
     self.otherPercentage.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateOtherPercentage:self.vehicle.costs]];
+    
+    [self.pieGraphView setNeedsDisplay];
 }
+
+
 
 
 

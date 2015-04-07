@@ -65,9 +65,7 @@
 }
 
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSArray *array = [[[self.fetchedResultsController sections] objectAtIndex:section] objects];
-    
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {    
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [NSString stringWithFormat:@"%@", [sectionInfo name]];
 }
@@ -121,6 +119,8 @@
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
 }
@@ -175,6 +175,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
         addEntryController.vehicle = self.vehicle;
+        addEntryController.IsAddEntry = TRUE;
     }
     
     if ([segue.identifier isEqualToString:@"viewEntry"]) {
@@ -184,6 +185,7 @@
         AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
         addEntryController.vehicle = self.vehicle;
         addEntryController.costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        addEntryController.isAddEntry = FALSE;
     }
 }
 

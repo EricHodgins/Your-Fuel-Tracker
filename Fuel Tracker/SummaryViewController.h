@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Vehicle.h"
+#import "GraphicView.h"
 
 @interface SummaryViewController : UIViewController
 
@@ -20,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *gasPercentage;
 @property (weak, nonatomic) IBOutlet UILabel *oilPercentage;
 @property (weak, nonatomic) IBOutlet UILabel *otherPercentage;
+
+@property (strong, nonatomic) IBOutlet GraphicView *pieGraphView;
+
 
 @end

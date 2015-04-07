@@ -47,7 +47,7 @@
     return [self calculateTotalGasCost:costs] + [self calculateTotalOilCost:costs] + [self calculateTotalOtherCost:costs];
 }
 
--(float)calculateCostPerDistance:(NSSet *)costs startDistance:(int)startDistance endDistance:(int)endDistance {
+-(float)calculateCostPerDistance:(NSSet *)costs startDistance:(NSInteger)startDistance endDistance:(NSInteger)endDistance {
     float costPerDistance = [self calculateTotalCost:costs] / (endDistance - startDistance);
     if (isnan(costPerDistance)) {
         return 0;

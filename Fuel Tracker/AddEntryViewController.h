@@ -22,4 +22,6 @@
 @property(nonatomic, strong) Vehicle *vehicle;
 @property(nonatomic, strong) Costs *costs;
 
+@property(assign) BOOL isAddEntry;
+
 @end

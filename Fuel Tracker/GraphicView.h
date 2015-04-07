@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Vehicle.h"
 
 @interface GraphicView : UIView
+
+@property (nonatomic, strong)Vehicle *vehicle;
 
 @end

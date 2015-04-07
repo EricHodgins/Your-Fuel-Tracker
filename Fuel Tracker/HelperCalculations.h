@@ -20,7 +20,7 @@
 -(float)calculateOtherPercentage: (NSSet *)costs;
 
 -(float)calculateTotalCost: (NSSet *)costs;
--(float)calculateCostPerDistance: (NSSet *)costs startDistance:(int)startDistance endDistance:(int)endDistance;
+-(float)calculateCostPerDistance: (NSSet *)costs startDistance:(NSInteger)startDistance endDistance:(NSInteger)endDistance;
 
 
 
