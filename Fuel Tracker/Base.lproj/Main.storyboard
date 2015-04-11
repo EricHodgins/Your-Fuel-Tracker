@@ -58,8 +58,8 @@
             <objects>
                 <viewController id="z9E-Au-muT" customClass="AddVehicleViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zFe-MG-ADr"/>
-                        <viewControllerLayoutGuide type="bottom" id="tNT-WA-ZUa"/>
+                        <viewControllerLayoutGuide type="top" id="ZC8-KM-yFB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hch-0I-yzx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2dj-Mn-cFT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -109,8 +109,8 @@
             <objects>
                 <viewController id="WWa-J2-9Jo" customClass="SummaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tYY-TC-dac"/>
-                        <viewControllerLayoutGuide type="bottom" id="M5m-tC-kri"/>
+                        <viewControllerLayoutGuide type="top" id="89W-ZD-3kT"/>
+                        <viewControllerLayoutGuide type="bottom" id="epN-ne-RXi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P6Z-7q-LM9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -152,24 +152,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-HQ-FlT">
-                                <rect key="frame" x="94" y="241" width="210" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgx-Nb-lFg">
-                                <rect key="frame" x="94" y="270" width="210" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVg-RH-kFt">
-                                <rect key="frame" x="94" y="299" width="210" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlM-WU-oHw">
                                 <rect key="frame" x="167" y="126" width="137" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -182,27 +164,29 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gas %:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot6-Cy-Eu8">
-                                <rect key="frame" x="16" y="241" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oil %:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd8-DZ-IuQ">
-                                <rect key="frame" x="16" y="270" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other %:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXD-cv-OkB">
-                                <rect key="frame" x="16" y="299" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view alpha="0.64999999999999969" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4lu-50-DSD" customClass="GraphicView">
-                                <rect key="frame" x="0.0" y="340" width="320" height="160"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="221" width="320" height="228"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVg-RH-kFt">
+                                        <rect key="frame" x="257" y="149" width="103" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-HQ-FlT">
+                                        <rect key="frame" x="217" y="19" width="103" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgx-Nb-lFg">
+                                        <rect key="frame" x="86" y="129" width="66" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,8 +248,8 @@
             <objects>
                 <viewController id="HYm-Qv-sCs" customClass="AddEntryViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a2x-MN-zhi"/>
-                        <viewControllerLayoutGuide type="bottom" id="vTI-oZ-yTs"/>
+                        <viewControllerLayoutGuide type="top" id="fmz-cn-jx8"/>
+                        <viewControllerLayoutGuide type="bottom" id="LHA-3d-tnz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JZX-VA-pqt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -364,8 +348,8 @@
             <objects>
                 <viewController id="36N-Y2-4GM" customClass="VehicleInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eYn-fV-54Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="9eT-jz-pXR"/>
+                        <viewControllerLayoutGuide type="top" id="ZYh-sN-IhX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kmc-Df-tve"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W3c-dL-Dbo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -509,7 +493,7 @@
         <scene sceneID="53D-GL-JA4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q0I-Cu-4og" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" id="q3L-Ka-Zwn"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="Rectangle 1" id="q3L-Ka-Zwn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pN8-jo-d4Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -528,7 +512,7 @@
         <scene sceneID="bIi-i4-JGg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yay-NU-h4N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Entries" id="N1V-lJ-AKU"/>
+                    <tabBarItem key="tabBarItem" title="Entries" image="EntryIcon" id="N1V-lJ-AKU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFr-se-eSh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -566,7 +550,7 @@
         <scene sceneID="9j3-bN-iKy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n0b-rX-Vsz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summary" id="XYE-db-H91"/>
+                    <tabBarItem key="tabBarItem" title="Summary" image="PieTabIcon" id="XYE-db-H91"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="55p-Vv-YXT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -582,6 +566,11 @@
             <point key="canvasLocation" x="2258" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EntryIcon" width="30" height="30"/>
+        <image name="PieTabIcon" width="30" height="30"/>
+        <image name="Rectangle 1" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

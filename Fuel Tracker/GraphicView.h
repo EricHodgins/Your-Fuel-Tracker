@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong)Vehicle *vehicle;
 
+-(CGRect)positionGasPercentLabel;
+
 @end
