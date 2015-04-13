@@ -19,9 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *otherTotalCost;
 @property (weak, nonatomic) IBOutlet UILabel *grandTotalCost;
 
-@property (weak, nonatomic) IBOutlet UILabel *gasPercentage;
-@property (weak, nonatomic) IBOutlet UILabel *oilPercentage;
-@property (weak, nonatomic) IBOutlet UILabel *otherPercentage;
 
 @property (strong, nonatomic) IBOutlet GraphicView *pieGraphView;
 

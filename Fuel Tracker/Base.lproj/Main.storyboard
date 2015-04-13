@@ -176,38 +176,33 @@
                                         <rect key="frame" x="0.0" y="198" width="414" height="228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l5d-HQ-FlT">
-                                                <rect key="frame" x="235" y="100" width="40" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xz4-oP-Puz">
+                                                <rect key="frame" x="26" y="17" width="31" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgx-Nb-lFg">
-                                                <rect key="frame" x="99" y="129" width="66" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xz4-oP-Puz">
-                                                <rect key="frame" x="26" y="17" width="34" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FVg-RH-kFt">
-                                                <rect key="frame" x="270" y="149" width="103" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TzQ-5S-gsp">
+                                                <rect key="frame" x="26" y="46" width="21" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <color key="textColor" red="0.37571188668224298" green="0.37571188668224298" blue="0.37571188668224298" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gZ1-gD-dgs">
+                                                <rect key="frame" x="26" y="75" width="43" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.71500522137115552" green="0.92253145772106049" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="gasPercentage" destination="xz4-oP-Puz" id="LDE-zY-lrU"/>
+                                            <outlet property="oilPercentage" destination="TzQ-5S-gsp" id="mSO-jc-Tos"/>
+                                            <outlet property="otherPercentage" destination="gZ1-gD-dgs" id="GI7-nG-yw0"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -217,12 +212,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="R5K-Ko-rPR"/>
                     <connections>
-                        <outlet property="gasPercentage" destination="l5d-HQ-FlT" id="rSm-pO-m3b"/>
                         <outlet property="gasTotalCost" destination="QFM-nv-Odi" id="l3e-pc-eJb"/>
                         <outlet property="grandTotalCost" destination="lpK-4o-XHk" id="7CD-8U-Nlf"/>
-                        <outlet property="oilPercentage" destination="lgx-Nb-lFg" id="eDq-Yh-OcF"/>
                         <outlet property="oilTotalCost" destination="tlM-WU-oHw" id="aQ0-9g-4RF"/>
-                        <outlet property="otherPercentage" destination="FVg-RH-kFt" id="2t2-su-tqY"/>
                         <outlet property="otherTotalCost" destination="nd5-5h-YRy" id="Q1T-bg-J3E"/>
                         <outlet property="pieGraphView" destination="4lu-50-DSD" id="zLt-kP-Iac"/>
                         <outlet property="scrollView" destination="dUe-yz-iaV" id="Lp4-wx-v0F"/>
