@@ -14,6 +14,7 @@
 @interface SummaryViewController ()
 
 @property(nonatomic, strong) HelperCalculations *helperCalcCosts;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -22,8 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.scrollView setScrollEnabled:YES];
+    float scrollWidth = self.view.bounds.size.width;
+    [self.scrollView setContentSize:CGSizeMake(scrollWidth, 900)];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.pieGraphView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200);
+
+    
     self.helperCalcCosts = [[HelperCalculations alloc] init];
     self.pieGraphView.vehicle = self.vehicle;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.gasPercentage setFrame:[self.pieGraphView positionGasPercentLabel]];
+
+    [self.oilPercentage setFrame:[self.pieGraphView positionOilPercentLabel]];
+    
+    [self.pieGraphView setNeedsDisplay];
+
     
 }
 
@@ -32,24 +53,17 @@
     self.tabBarController.navigationController.navigationBarHidden = NO;
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
     
+    
     self.gasTotalCost.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateTotalGasCost:self.vehicle.costs]];
     self.oilTotalCost.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateTotalOilCost:self.vehicle.costs]];
     self.otherTotalCost.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateTotalOtherCost:self.vehicle.costs]];
     self.grandTotalCost.text = [NSString stringWithFormat:@"%.2f", [self.helperCalcCosts calculateTotalCost:self.vehicle.costs]];
     
     self.gasPercentage.text = [NSString stringWithFormat:@"Gas\n%.2f%%", [self.helperCalcCosts calculateGasPercentage:self.vehicle.costs]];
-    
-    [self.gasPercentage removeFromSuperview];
-    [self.gasPercentage setTranslatesAutoresizingMaskIntoConstraints:YES];
-    [self.gasPercentage setFrame:[self.pieGraphView positionGasPercentLabel]];
-    [self.pieGraphView addSubview:self.gasPercentage];
-    
-    
     self.oilPercentage.text = [NSString stringWithFormat:@"Oil\n%.2f%%", [self.helperCalcCosts calculateOilPercentage:self.vehicle.costs]];
     self.otherPercentage.text = [NSString stringWithFormat:@"Other\n%.2f%%", [self.helperCalcCosts calculateOtherPercentage:self.vehicle.costs]];
     
-    [self.pieGraphView setNeedsDisplay];
-}
+  }
 
 
 

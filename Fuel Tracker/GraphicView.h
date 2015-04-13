@@ -11,8 +11,10 @@
 
 @interface GraphicView : UIView
 
+@property (nonatomic, weak) IBOutlet UILabel *gasPercentage;
+
 @property (nonatomic, strong)Vehicle *vehicle;
 
 -(CGRect)positionGasPercentLabel;
-
+-(CGRect)positionOilPercentLabel;
 @end

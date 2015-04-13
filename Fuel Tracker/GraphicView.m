@@ -9,7 +9,43 @@
 #import "GraphicView.h"
 #import "HelperCalculations.h"
 
+@interface GraphicView()
+
+@property CGPoint pieCenter;
+@property CGFloat radius;
+
+@property CGPoint gasEndPoint;
+@property CGPoint oilEndPoint;
+
+@property float gasCost;
+@property float oilCost;
+@property float otherCost;
+
+@property float gasAngleEnd;
+@property float oilAngleEnd;
+@property float otherAngleEnd;
+@property float separator;
+
+
+@end
+
+
 @implementation GraphicView
+
+
+-(void)endingGasPoint:(float)radAngle {
+    CGPoint gasEndPt;
+    CGPoint pieCenter = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
+    CGFloat radius = pieCenter.y - 40.f;
+    
+    gasEndPt.x = pieCenter.x + (radius * (cos(radAngle)));
+    gasEndPt.y = pieCenter.y + (radius * (sin(radAngle)));
+    
+    NSLog(@"Ending Gas point: (%f, %f)", gasEndPt.x, gasEndPt.y);
+    
+    self.gasEndPoint = gasEndPt;
+    
+}
 
 -(void)drawRect:(CGRect)rect {
     NSLog(@"Vehicle Owner: %@", self.vehicle.owner);
@@ -22,18 +58,21 @@
     float separator = (M_PI * 2) / 180;
     
     if ((gas >= 1) || (oil >= 1) || (other >= 1)) {
-        NSLog(@"Separator: %f, zero: %f, one: %f, two: %f", separator, gas, oil, other);
         separator = 0;
     }
     
+    self.gasPercentage.text = @"Oh,hell";
     
-    CGPoint center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
-    CGFloat radius = center.y - 40.f;
+    CGPoint pieCenter = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
+    CGFloat radius = pieCenter.y - 40.f;
+    
+    NSLog(@"center x: %f, center y: %f, radius: %f", pieCenter.x, pieCenter.y, radius);
     
     if (gas != 0) {
+        [self endingGasPoint:(M_PI * 2)*gas - separator];
         UIBezierPath *portionPath = [UIBezierPath bezierPath];
-        [portionPath moveToPoint:center];
-        [portionPath addArcWithCenter:center radius:radius startAngle:0.f endAngle:(M_PI * 2)*gas - separator clockwise:YES];
+        [portionPath moveToPoint:pieCenter];
+        [portionPath addArcWithCenter:pieCenter radius:radius startAngle:0.f endAngle:(M_PI * 2)*gas - separator clockwise:YES];
         [portionPath closePath];
         
         UIColor *red = [UIColor colorWithRed:190.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:0.77f];
@@ -44,8 +83,8 @@
 
     if (oil != 0) {
         UIBezierPath *portionPath1 = [UIBezierPath bezierPath];
-        [portionPath1 moveToPoint:center];
-        [portionPath1 addArcWithCenter:center radius:radius startAngle:(M_PI * 2) * gas endAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas) - separator clockwise:YES];
+        [portionPath1 moveToPoint:pieCenter];
+        [portionPath1 addArcWithCenter:pieCenter radius:radius startAngle:(M_PI * 2) * gas endAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas) - separator clockwise:YES];
         [portionPath1 closePath];
         
         [[UIColor blueColor] setFill];
@@ -54,8 +93,8 @@
     
     if (other != 0) {
         UIBezierPath *portionPath2 = [UIBezierPath bezierPath];
-        [portionPath2 moveToPoint:center];
-        [portionPath2 addArcWithCenter:center radius:radius startAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas) endAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas)+(M_PI * 2 * other) - separator clockwise:YES];
+        [portionPath2 moveToPoint:pieCenter];
+        [portionPath2 addArcWithCenter:pieCenter radius:radius startAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas) endAngle:(M_PI * 2 *oil)+(M_PI * 2 * gas)+(M_PI * 2 * other) - separator clockwise:YES];
         
         portionPath2.lineWidth = 4;
         [portionPath2 strokeWithBlendMode:kCGBlendModeDifference alpha:0.8];
@@ -66,20 +105,33 @@
  
 }
 
+-(CGPoint)findCenterOfPieGraph {
+    return CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
+}
+
 -(CGRect)positionGasPercentLabel {
-    CGPoint center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
+    NSLog(@"Gas endpoint.x = %f", self.gasEndPoint);
     CGRect frame;
-//    frame.origin.x = center.x + (center.y - 35);
-//    frame.origin.y = 0;
-    frame.origin.x = 250;
-    frame.origin.y = 100;
-    frame.size.height = 40;
-    frame.size.width = 70;
+    CGPoint pieCenter = [self findCenterOfPieGraph];
+    CGFloat radius = pieCenter.y - 40.f;
+    frame.origin.x = ((pieCenter.x + radius + 35.0) - self.gasEndPoint.x)/2 + self.gasEndPoint.x;
+    frame.origin.y = ((pieCenter.y - 16.0) - self.gasEndPoint.y)/2 + self.gasEndPoint.y;
+    frame.size.height = 35;
+    frame.size.width = 40;
     
+    NSLog(@"Gas position: (%f, %f)", frame.origin.x, frame.origin.y);
     return frame;
 }
 
-
+-(CGRect)positionOilPercentLabel {
+    CGRect frame;
+    frame.origin.x = 160;
+    frame.origin.y = 160;
+    frame.size.height = 40;
+    frame.size.width = 35;
+    
+    return frame;
+}
 
 
 //-(void) drawGradient {
