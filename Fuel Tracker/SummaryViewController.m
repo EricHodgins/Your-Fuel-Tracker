@@ -28,7 +28,7 @@
     [self.scrollView setContentSize:CGSizeMake(scrollWidth, 900)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.pieGraphView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200);
+    self.pieGraphView.frame = CGRectMake(0, 250, self.view.frame.size.width, 200);
 
     
     self.helperCalcCosts = [[HelperCalculations alloc] init];
