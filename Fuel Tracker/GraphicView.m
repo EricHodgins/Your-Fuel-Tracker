@@ -37,11 +37,23 @@
     endPoint.x = centerPt.x + 60*(cos(endAngle));
     endPoint.y = centerPt.y + 60*(sin(endAngle));
     
+    float x_offset = 0;
+    float y_offset = 0;
+    
+    if (endAngle >= (M_PI)) {
+        x_offset = -50;
+    }
+    
+    if (endAngle <= (M_PI / 8)) {
+        x_offset = 10.0;
+        y_offset = -35;
+    }
+    
     CGRect frame;
-    frame.origin.x = endPoint.x;
-    frame.origin.y = endPoint.y;
+    frame.origin.x = endPoint.x + x_offset;
+    frame.origin.y = endPoint.y + y_offset;
     frame.size.height = 35;
-    frame.size.width = 40;
+    frame.size.width = 50;
     
     self.gasPercentage.frame = frame;
     self.gasPercentage.text = [NSString stringWithFormat:@"Gas\n%.2f%%", [self.helper calculateGasPercentage:self.vehicle.costs]];
@@ -51,7 +63,6 @@
 
 -(void)positionOilLabel:(float)startAngle endAngle:(float)endAngle radius:(float)radius centerPt:(CGPoint)centerPt {
     endAngle = endAngle - ((endAngle - startAngle) / 2);
-    NSLog(@"Start:%f, End: %f, ---->Oil Angle: %f",startAngle, endAngle, endAngle);
     CGPoint endPoint;
     endPoint.x = centerPt.x + 60*(cos(endAngle));
     endPoint.y = centerPt.y + 60*(sin(endAngle));
@@ -120,7 +131,6 @@
     CGPoint pieCenter = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
     CGFloat radius = pieCenter.y - 40.f;
     
-    NSLog(@"center x: %f, center y: %f, radius: %f", pieCenter.x, pieCenter.y, radius);
     
     if (gas != 0) {
         UIBezierPath *portionPath = [UIBezierPath bezierPath];
@@ -128,9 +138,11 @@
         [portionPath addArcWithCenter:pieCenter radius:radius startAngle:0.f endAngle:(M_PI * 2)*gas - separator clockwise:YES];
         [portionPath closePath];
         
-        UIColor *red = [UIColor colorWithRed:190.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:0.77f];
-        [red setFill];
-        [portionPath fill];
+        if (gas >= 0.056) {
+            UIColor *red = [UIColor colorWithRed:190.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:0.77f];
+            [red setFill];
+            [portionPath fill];
+        }
         
         [self positionGasLabel:(M_PI * 2)*gas radius:radius centerPt:pieCenter startPt:CGPointMake(pieCenter.x + radius, pieCenter.y)];
     } else {

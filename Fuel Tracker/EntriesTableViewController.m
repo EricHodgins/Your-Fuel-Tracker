@@ -60,7 +60,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Costs *costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Gas:%f   Odometer:%i", costs.gasCost, costs.odometerReading];
+    cell.textLabel.text = [NSString stringWithFormat:@"Cost: %.2f   Odometer:%i", (costs.gasCost + costs.oilCost + costs.otherCost), costs.odometerReading];
     return cell;
 }
 
@@ -70,6 +70,25 @@
     return [NSString stringWithFormat:@"%@", [sectionInfo name]];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 60.0f;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60.0)];
+    UIColor *red = [UIColor colorWithRed:240.0f/255.0f green:128.0f/255.0f blue:128.0f/255.0f alpha:100.0f];
+    [header setBackgroundColor: red];
+    
+    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(8.0, 15.0, 100, 30)];
+    monthLabel.text = [NSString stringWithFormat:@"%@", [sectionInfo name]];
+    monthLabel.textColor = [UIColor blackColor];
+    
+    
+    [header addSubview:monthLabel];
+    
+    return header;
+}
 
 #pragma mark - Configure the fetched results controller
 

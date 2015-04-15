@@ -23,9 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self addConstraints];
+    
     [self.scrollView setScrollEnabled:YES];
     float scrollWidth = self.view.bounds.size.width;
-    [self.scrollView setContentSize:CGSizeMake(scrollWidth, 900)];
+    [self.scrollView setContentSize:CGSizeMake(scrollWidth, 700)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.pieGraphView.frame = CGRectMake(0, 250, self.view.frame.size.width, 200);
@@ -35,6 +37,29 @@
     self.pieGraphView.vehicle = self.vehicle;
     
 }
+
+
+-(void) addConstraints {
+    
+    CGFloat labelWidth = self.view.bounds.size.width - self.gasTextLabel.frame.size.width - 16.0f;
+    CGRect gasFrame = CGRectMake(self.gasTotalCost.frame.origin.x, self.gasTotalCost.frame.origin.y, labelWidth, self.gasTotalCost.frame.size.height);
+    self.gasTotalCost.frame = gasFrame;
+    
+    CGRect oilFrame = CGRectMake(self.oilTotalCost.frame.origin.x, self.oilTotalCost.frame.origin.y, labelWidth, self.oilTotalCost.frame.size.height);
+    self.oilTotalCost.frame = oilFrame;
+    
+    CGRect otherFrame = CGRectMake(self.otherTotalCost.frame.origin.x, self.otherTotalCost.frame.origin.y, labelWidth, self.otherTotalCost.frame.size.height);
+    self.otherTotalCost.frame = otherFrame;
+    
+    CGRect totalFrame = CGRectMake(self.grandTotalCost.frame.origin.x, self.grandTotalCost.frame.origin.y, labelWidth, self.grandTotalCost.frame.size.height);
+    self.grandTotalCost.frame = totalFrame;
+    
+    CGFloat separatorWidth = self.view.bounds.size.width - 120;
+    CGRect separatorFrame = CGRectMake(self.separotorView.frame.origin.x, self.separotorView.frame.origin.y, separatorWidth, self.separotorView.frame.size.height);
+    self.separotorView.frame = separatorFrame;
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -54,7 +79,7 @@
     
     [self.pieGraphView setNeedsDisplay];
     
-  }
+}
 
 
 
