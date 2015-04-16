@@ -33,10 +33,15 @@
     self.tabBarController.title = self.vehicle.owner;
     self.calculateCosts = [[HelperCalculations alloc] init];
     
-    self.ownerPic.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    UIImage *pic = [UIImage imageWithData:self.vehicle.imageData];
-    [self.ownerPic setImage:pic forState:UIControlStateNormal];
-    [self.ownerPic setImage:pic forState:UIControlStateHighlighted];
+    if (self.vehicle.imageData) {
+        self.ownerPic.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        UIImage *pic = [UIImage imageWithData:self.vehicle.imageData];
+        [self.ownerPic setImage:pic forState:UIControlStateNormal];
+        [self.ownerPic setImage:pic forState:UIControlStateHighlighted];
+    } else {
+        UIImage *pic = [UIImage imageNamed:@"Pic Placeholder.png"];
+        [self.ownerPic setImage:pic forState:UIControlStateNormal];
+    }
     
     [self addConstraints];
     
@@ -104,14 +109,14 @@
 - (void) upDateValues {
     self.fetchedResultsController = nil;
     [self.fetchedResultsController performFetch:nil];
-    
+    self.ownerName.text = self.vehicle.owner;
     self.tabBarController.title = self.vehicle.owner;
     self.startOdometerTextField.text = [NSString stringWithFormat:@"%d", self.vehicle.startDistance];
     
     Costs *costsEndingObject = [[self.fetchedResultsController fetchedObjects] lastObject];
     self.endOdometerTextField.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading];
     
-    self.totalDistanceLabel.text = [NSString stringWithFormat:@"%ld", costsEndingObject.odometerReading - self.startOdometerTextField.text.integerValue];
+    self.totalDistanceLabel.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading - (int)self.startOdometerTextField.text.integerValue];
     
     self.totalCostLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateTotalCost:self.vehicle.costs]];
     self.costPerDistanceLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateCostPerDistance:self.vehicle.costs startDistance:self.startOdometerTextField.text.integerValue endDistance:self.endOdometerTextField.text.integerValue] ];
@@ -148,7 +153,7 @@
     
     self.vehicle.startDistance = self.startOdometerTextField.text.integerValue;
     self.vehicle.owner = self.ownerName.text;
-    
+    NSLog(@"Owner: %@", self.ownerName.text);
     if (self.pickedImage != nil) {
         self.vehicle.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.5);
     }

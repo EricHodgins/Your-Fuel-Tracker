@@ -17,6 +17,8 @@
     
     if (entry.imageData) {
         self.mainImageView.image = [UIImage imageWithData:entry.imageData];
+    } else {
+        self.mainImageView.image = [UIImage imageNamed:@"Pic Placeholder.png"];
     }
 }
 

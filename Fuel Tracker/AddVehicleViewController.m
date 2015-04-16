@@ -21,8 +21,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self addConstraints];
+    
     self.imageButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
+
+-(void)addConstraints {
+    CGFloat width = self.view.bounds.size.width - 32.0;
+    CGRect ownerTextFrame = CGRectMake(self.ownerName.frame.origin.x, self.ownerName.frame.origin.y, width, 30);
+    self.ownerName.frame = ownerTextFrame;
+    
+    CGRect buttonImageFrame = CGRectMake(self.imageButton.frame.origin.x, self.imageButton.frame.origin.y, width, 185);
+    self.imageButton.frame = buttonImageFrame;
+}
+
+
 
 - (IBAction)cancelWasPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

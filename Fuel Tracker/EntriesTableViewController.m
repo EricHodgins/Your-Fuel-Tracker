@@ -65,10 +65,10 @@
 }
 
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {    
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [NSString stringWithFormat:@"%@", [sectionInfo name]];
-}
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {    
+//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+//    return [NSString stringWithFormat:@"%@", [sectionInfo name]];
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 60.0f;
@@ -78,6 +78,16 @@
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60.0)];
     UIColor *red = [UIColor colorWithRed:240.0f/255.0f green:128.0f/255.0f blue:128.0f/255.0f alpha:100.0f];
     [header setBackgroundColor: red];
+    
+    NSArray *monthCostsArray = [[[self.fetchedResultsController sections] objectAtIndex:section] objects];
+    float monthCost = 0;
+    for (Costs *costs in monthCostsArray) {
+        monthCost += costs.gasCost + costs.oilCost + costs.otherCost;
+    }
+    
+    UILabel *totalCostsLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.bounds.size.width) - 100.0, 15.0, 80.0, 30)];
+    totalCostsLabel.text = [NSString stringWithFormat:@"%.2f", monthCost];
+    [header addSubview:totalCostsLabel];
     
     id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(8.0, 15.0, 100, 30)];
