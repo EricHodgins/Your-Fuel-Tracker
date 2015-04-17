@@ -14,7 +14,7 @@
 
 @property (nonatomic) NSTimeInterval date;
 @property (nonatomic) float gasCost;
-@property (nonatomic) int16_t odometerReading;
+@property (nonatomic) int32_t odometerReading;
 @property (nonatomic) float oilCost;
 @property (nonatomic) float otherCost;
 @property (nonatomic, retain) NSString * otherExplained;
