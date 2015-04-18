@@ -60,15 +60,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Costs *costs = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Cost: %.2f   Odometer:%i", (costs.gasCost + costs.oilCost + costs.otherCost), costs.odometerReading];
+    cell.textLabel.text = [NSString stringWithFormat:@"Cost: %.2f   Odometer: %i", (costs.gasCost + costs.oilCost + costs.otherCost), costs.odometerReading];
     return cell;
 }
 
 
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {    
-//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-//    return [NSString stringWithFormat:@"%@", [sectionInfo name]];
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 60.0f;

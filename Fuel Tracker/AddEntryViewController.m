@@ -49,7 +49,7 @@
         self.costs.oilCost = self.oilCostTextField.text.floatValue;
         self.costs.otherCost = self.otherCostTextField.text.floatValue;
         self.costs.otherExplained = self.describeOtherCostTextField.text;
-        self.costs.odometerReading = self.odometerTextField.text.integerValue;
+        self.costs.odometerReading = (int)self.odometerTextField.text.integerValue;
         self.costs.date = [[_datePicker date] timeIntervalSince1970];
         [coreDataStack saveContext];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -67,7 +67,7 @@
         Costs *costs = [NSEntityDescription insertNewObjectForEntityForName:@"Costs" inManagedObjectContext:coreDataStack.managedObjectContext];
         costs.gasCost = self.gasCostTextField.text.floatValue;
         costs.oilCost = self.oilCostTextField.text.floatValue;
-        costs.odometerReading = self.odometerTextField.text.integerValue;
+        costs.odometerReading = (int)self.odometerTextField.text.integerValue;
         costs.otherCost = self.otherCostTextField.text.floatValue;
         costs.otherExplained = self.describeOtherCostTextField.text;
         costs.date = [[_datePicker date] timeIntervalSince1970];
