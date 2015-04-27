@@ -68,8 +68,10 @@
     CGRect startFieldFrame = CGRectMake(self.startOdometerTextField.frame.origin.x, self.startOdometerTextField.frame.origin.y, labelWidth, self.startOdometerTextField.frame.size.height);
     self.startOdometerTextField.frame = startFieldFrame;
     
-    CGRect endFieldFrame = CGRectMake(self.startOdometerTextField.frame.origin.x + labelWidth, self.endOdometerTextField.frame.origin.y, labelWidth, self.endOdometerTextField.frame.size.height);
-    self.endOdometerTextField.frame = endFieldFrame;
+    
+    //end od. label
+    CGRect endOdometerLabel = CGRectMake(self.startLabel.frame.origin.x + labelWidth, self.endingOdometerLabel.frame.origin.y, labelWidth, self.endingOdometerLabel.frame.size.height);
+    self.endingOdometerLabel.frame = endOdometerLabel;
     
 
     CGFloat distanceWidth = self.view.bounds.size.width - 16.0;
@@ -97,7 +99,6 @@
     self.ownerName.hidden = YES;
     [self upDateValues];
     
-    self.endOdometerTextField.enabled = NO;
     self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
     [self.tabBarController.navigationController setNavigationBarHidden:NO animated:NO];
 }
@@ -110,12 +111,13 @@
     self.startOdometerTextField.text = [NSString stringWithFormat:@"%d", self.vehicle.startDistance];
     
     Costs *costsEndingObject = [[self.fetchedResultsController fetchedObjects] lastObject];
-    self.endOdometerTextField.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading];
+    // ending odo. text
+    self.endingOdometerLabel.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading];
     
     self.totalDistanceLabel.text = [NSString stringWithFormat:@"Total Distance: %d", costsEndingObject.odometerReading - (int)self.startOdometerTextField.text.integerValue];
     
     self.totalCostLabel.text = [NSString stringWithFormat:@"Total Cost: %.2f", [self.calculateCosts calculateTotalCost:self.vehicle.costs]];
-    self.costPerDistanceLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateCostPerDistance:self.vehicle.costs startDistance:self.startOdometerTextField.text.integerValue endDistance:self.endOdometerTextField.text.integerValue] ];
+    self.costPerDistanceLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateCostPerDistance:self.vehicle.costs startDistance:self.startOdometerTextField.text.integerValue endDistance:self.endingOdometerLabel.text.integerValue] ];
 
 }
 
@@ -130,7 +132,7 @@
 
 -(void)doneWasPressed {
     self.ownerName.hidden = YES;
-    if (self.endOdometerTextField.text.integerValue < self.startOdometerTextField.text.integerValue) {
+    if (self.endingOdometerLabel.text.integerValue < self.startOdometerTextField.text.integerValue) {
         [self makeEditable];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Starting Odometer is greater than Ending Odometer reading." message:@"Do you want to save?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];

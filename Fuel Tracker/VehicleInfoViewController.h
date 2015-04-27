@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) Vehicle *vehicle;
 @property (weak, nonatomic) IBOutlet UITextField *startOdometerTextField;
-@property (weak, nonatomic) IBOutlet UITextField *endOdometerTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *totalDistanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalCostLabel;
 
@@ -23,5 +23,7 @@
 
 
 @property (strong, nonatomic) IBOutlet UILabel *costDistanceText;
+
+@property (strong, nonatomic) IBOutlet UILabel *endingOdometerLabel;
 
 @end
