@@ -200,7 +200,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AddEntryViewController *addEntryController = (AddEntryViewController *) navigationController.topViewController;
         addEntryController.vehicle = self.vehicle;
-        addEntryController.IsAddEntry = TRUE;
+        addEntryController.isAddEntry = TRUE;
     }
     
     if ([segue.identifier isEqualToString:@"viewEntry"]) {

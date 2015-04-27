@@ -9,6 +9,7 @@
 #import "AddVehicleViewController.h"
 #import "CoreDataStack.h"
 #import "Vehicle.h"
+#import "Costs.h"
 
 
 @interface AddVehicleViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
@@ -31,6 +32,10 @@
     CGFloat width = self.view.bounds.size.width - 32.0;
     CGRect ownerTextFrame = CGRectMake(self.ownerName.frame.origin.x, self.ownerName.frame.origin.y, width, 30);
     self.ownerName.frame = ownerTextFrame;
+    
+    CGRect startOdometerFrame = CGRectMake(self.startOdometerReading.frame.origin.x, self.startOdometerReading.frame.origin.y, width, 30);
+    self.startOdometerReading.frame = startOdometerFrame;
+    
     
     CGRect buttonImageFrame = CGRectMake(self.imageButton.frame.origin.x, self.imageButton.frame.origin.y, width, 185);
     self.imageButton.frame = buttonImageFrame;
@@ -59,15 +64,29 @@
     Vehicle *vehicle = [NSEntityDescription insertNewObjectForEntityForName:@"Vehicle" inManagedObjectContext:coreDataStack.managedObjectContext];
     
     vehicle.owner = self.ownerName.text;
+    vehicle.startDistance = (int)self.startOdometerReading.text.integerValue;
     vehicle.dateAdded = [[NSDate date] timeIntervalSince1970];
     
     if (self.pickedImage != nil) {
         vehicle.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.1);
     }
     
+    
+    Costs *costs = [NSEntityDescription insertNewObjectForEntityForName:@"Costs" inManagedObjectContext:coreDataStack.managedObjectContext];
+    costs.odometerReading = (int)self.startOdometerReading.text.integerValue;
+    costs.date = [[NSDate date] timeIntervalSince1970];
+    costs.otherExplained = @"First entry.";
+    
+    [vehicle addCostsObject:costs];
+    
+    
     [coreDataStack saveContext];
 
 }
+
+
+
+
 
 
 - (void)setPickedImage:(UIImage *)pickedImage {

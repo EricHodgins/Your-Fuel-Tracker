@@ -12,7 +12,7 @@
 
 #import "HelperCalculations.h"
 
-@interface VehicleInfoViewController () <NSFetchedResultsControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface VehicleInfoViewController () <NSFetchedResultsControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) UIBarButtonItem *buttonItem;
@@ -136,17 +136,31 @@
     self.ownerName.hidden = YES;
     if (self.endOdometerTextField.text.integerValue < self.startOdometerTextField.text.integerValue) {
         [self makeEditable];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Negative Distance" message:@"You cannot travel backwards." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Starting Odometer is greater than Ending Odometer reading." message:@"Do you want to save?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];
     } else {
-        self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
-        [self updateVehicleEntry];
-        [self upDateValues];
-        self.startOdometerTextField.enabled = NO;
-        [self.view endEditing:YES];
+        [self finishDoneMethod];
     }
     
 }
+
+-(void)finishDoneMethod {
+    self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
+    [self updateVehicleEntry];
+    [self upDateValues];
+    self.startOdometerTextField.enabled = NO;
+    [self.view endEditing:YES];
+
+}
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self finishDoneMethod];
+    }
+
+}
+
 
 -(void)updateVehicleEntry {
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
