@@ -21,8 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *endLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *separator;
 
-@property (strong, nonatomic) IBOutlet UILabel *totalDistanceText;
-@property (strong, nonatomic) IBOutlet UILabel *totalCostText;
+
 @property (strong, nonatomic) IBOutlet UILabel *costDistanceText;
 
 @end

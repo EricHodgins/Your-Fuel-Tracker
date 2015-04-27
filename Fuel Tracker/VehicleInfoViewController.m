@@ -32,9 +32,9 @@
     [super viewDidLoad];
     self.tabBarController.title = self.vehicle.owner;
     self.calculateCosts = [[HelperCalculations alloc] init];
+    self.ownerPic.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     if (self.vehicle.imageData) {
-        self.ownerPic.imageView.contentMode = UIViewContentModeScaleAspectFit;
         UIImage *pic = [UIImage imageWithData:self.vehicle.imageData];
         [self.ownerPic setImage:pic forState:UIControlStateNormal];
         [self.ownerPic setImage:pic forState:UIControlStateHighlighted];
@@ -71,18 +71,14 @@
     CGRect endFieldFrame = CGRectMake(self.startOdometerTextField.frame.origin.x + labelWidth, self.endOdometerTextField.frame.origin.y, labelWidth, self.endOdometerTextField.frame.size.height);
     self.endOdometerTextField.frame = endFieldFrame;
     
-    CGFloat textWidth = self.view.bounds.size.width / 3.0;
-    CGFloat distanceWidth = self.view.bounds.size.width - textWidth - 16.0;
-    CGRect totalDistanceTextFrame = CGRectMake(self.totalDistanceText.frame.origin.x, self.totalDistanceText.frame.origin.y, textWidth, self.totalDistanceText.frame.size.height);
-    self.totalDistanceText.frame = totalDistanceTextFrame;
+
+    CGFloat distanceWidth = self.view.bounds.size.width - 16.0;
     
-    CGRect totalDistanceLabelFrame = CGRectMake(self.totalDistanceText.frame.origin.x + textWidth, self.totalDistanceLabel.frame.origin.y, distanceWidth, self.totalDistanceLabel.frame.size.height);
+    CGRect totalDistanceLabelFrame = CGRectMake(self.totalDistanceLabel.frame.origin.x, self.totalDistanceLabel.frame.origin.y, distanceWidth, self.totalDistanceLabel.frame.size.height);
     self.totalDistanceLabel.frame = totalDistanceLabelFrame;
     
-    CGRect totalCostFrame = CGRectMake(self.totalCostText.frame.origin.x, self.totalCostText.frame.origin.y, textWidth, self.totalCostText.frame.size.height);
-    self.totalCostText.frame = totalCostFrame;
     
-    CGRect totalCostLabelFrame = CGRectMake(self.totalCostText.frame.origin.x + textWidth, self.totalCostLabel.frame.origin.y, distanceWidth, self.totalCostLabel.frame.size.height);
+    CGRect totalCostLabelFrame = CGRectMake(self.totalCostLabel.frame.origin.x, self.totalCostLabel.frame.origin.y, distanceWidth, self.totalCostLabel.frame.size.height);
     self.totalCostLabel.frame = totalCostLabelFrame;
     
     
@@ -116,9 +112,9 @@
     Costs *costsEndingObject = [[self.fetchedResultsController fetchedObjects] lastObject];
     self.endOdometerTextField.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading];
     
-    self.totalDistanceLabel.text = [NSString stringWithFormat:@"%d", costsEndingObject.odometerReading - (int)self.startOdometerTextField.text.integerValue];
+    self.totalDistanceLabel.text = [NSString stringWithFormat:@"Total Distance: %d", costsEndingObject.odometerReading - (int)self.startOdometerTextField.text.integerValue];
     
-    self.totalCostLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateTotalCost:self.vehicle.costs]];
+    self.totalCostLabel.text = [NSString stringWithFormat:@"Total Cost: %.2f", [self.calculateCosts calculateTotalCost:self.vehicle.costs]];
     self.costPerDistanceLabel.text = [NSString stringWithFormat:@"%.2f", [self.calculateCosts calculateCostPerDistance:self.vehicle.costs startDistance:self.startOdometerTextField.text.integerValue endDistance:self.endOdometerTextField.text.integerValue] ];
 
 }
@@ -149,6 +145,7 @@
     [self updateVehicleEntry];
     [self upDateValues];
     self.startOdometerTextField.enabled = NO;
+    self.ownerName.hidden = YES;
     [self.view endEditing:YES];
 
 }
@@ -157,9 +154,16 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         [self finishDoneMethod];
+    } else {
+        self.tabBarController.navigationItem.rightBarButtonItem = self.buttonItem;
+        self.startOdometerTextField.enabled = NO;
+        self.ownerName.hidden = YES;
+        [self upDateValues];
+        [self.view endEditing:YES];
     }
-
 }
+
+
 
 
 -(void)updateVehicleEntry {
