@@ -131,9 +131,9 @@
 }
 
 -(void)doneWasPressed {
+    [self.view endEditing:YES];
     self.ownerName.hidden = YES;
     if (self.endingOdometerLabel.text.integerValue < self.startOdometerTextField.text.integerValue) {
-        [self makeEditable];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Starting Odometer is greater than Ending Odometer reading." message:@"Do you want to save?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];
     } else {
@@ -148,7 +148,6 @@
     [self upDateValues];
     self.startOdometerTextField.enabled = NO;
     self.ownerName.hidden = YES;
-    [self.view endEditing:YES];
 
 }
 
@@ -161,8 +160,8 @@
         self.startOdometerTextField.enabled = NO;
         self.ownerName.hidden = YES;
         [self upDateValues];
-        [self.view endEditing:YES];
     }
+    
 }
 
 
@@ -170,7 +169,6 @@
 
 -(void)updateVehicleEntry {
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
-    
     self.vehicle.startDistance = self.startOdometerTextField.text.integerValue;
     self.vehicle.owner = self.ownerName.text;
     if (self.pickedImage != nil) {
@@ -181,9 +179,12 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self doneWasPressed];
     [textField resignFirstResponder];
     return YES;
 }
+
+
 
 #pragma mark - Setting/Changing Picture methods
 
