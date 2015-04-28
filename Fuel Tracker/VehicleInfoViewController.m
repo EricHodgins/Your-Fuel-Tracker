@@ -173,7 +173,6 @@
     
     self.vehicle.startDistance = self.startOdometerTextField.text.integerValue;
     self.vehicle.owner = self.ownerName.text;
-    NSLog(@"Owner: %@", self.ownerName.text);
     if (self.pickedImage != nil) {
         self.vehicle.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.5);
     }
