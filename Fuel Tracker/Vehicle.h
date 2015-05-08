@@ -16,7 +16,7 @@
 @property (nonatomic) NSTimeInterval dateAdded;
 @property (nonatomic, retain) NSData * imageData;
 @property (nonatomic, retain) NSString * owner;
-@property (nonatomic) int16_t startDistance;
+@property (nonatomic) int32_t startDistance;
 @property (nonatomic, retain) NSSet *costs;
 @end
 

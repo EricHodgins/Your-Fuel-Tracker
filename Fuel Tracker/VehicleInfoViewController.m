@@ -169,7 +169,7 @@
 
 -(void)updateVehicleEntry {
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
-    self.vehicle.startDistance = self.startOdometerTextField.text.integerValue;
+    self.vehicle.startDistance = (int32_t)self.startOdometerTextField.text.integerValue;
     self.vehicle.owner = self.ownerName.text;
     if (self.pickedImage != nil) {
         self.vehicle.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.5);
