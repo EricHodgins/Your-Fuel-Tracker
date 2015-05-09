@@ -98,8 +98,7 @@
     } else if (oilPercent <= 0.1 && gasPercent >= 0.5 && otherPercent <= 0.1) {
         oilCenter = CGPointMake(endPoint.x, endPoint.y - 20.0);
         frame.origin.y = endPoint.y - 20.0;
-    }
-    else {
+    } else {
         oilCenter = CGPointMake(endPoint.x, endPoint.y);
         frame.origin.y = endPoint.y;
     }

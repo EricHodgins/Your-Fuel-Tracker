@@ -49,7 +49,7 @@
 
 -(float)calculateCostPerDistance:(NSSet *)costs startDistance:(NSInteger)startDistance endDistance:(NSInteger)endDistance {
     float costPerDistance = [self calculateTotalCost:costs] / (endDistance - startDistance);
-    if (isnan(costPerDistance)) {
+    if (isnan(costPerDistance) || costPerDistance == INFINITY) {
         return 0;
     }
     return costPerDistance;
