@@ -44,25 +44,20 @@
     float width = fabs(endPoint.x - self.center.x);
     float labelAngle = atan(height / width);
     
-    NSLog(@"New Calc, endX: %f, endY: %f, centreX: %f, centreY: %f, OriginX: %f, OriginY: %f", endPoint.x, endPoint.y, self.center.x, self.center.y, self.frame.origin.x, self.frame.origin.y);
     if (endPoint.x >= self.center.x) {
         endPoint.x += cos(labelAngle) * labelGap;
-        NSLog(@"X is greater:");
     }
     
     if (endPoint.x < self.center.x) {
         endPoint.x -= cos(labelAngle) * labelGap;
-        NSLog(@"X is smaller");
     }
     
     if ((endPoint.y + self.frame.origin.y) >= self.center.y) {
         endPoint.y += sin(labelAngle) * labelGap;
-        NSLog(@"Y is greater");
     }
     
     if ((endPoint.y + self.frame.origin.y) < self.center.y) {
         endPoint.y -= sin(labelAngle) * labelGap;
-        NSLog(@"Y is smaller");
     }
 
     return endPoint;
