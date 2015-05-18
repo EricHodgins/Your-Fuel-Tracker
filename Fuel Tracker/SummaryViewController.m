@@ -54,9 +54,14 @@
     CGRect totalFrame = CGRectMake(self.grandTotalCost.frame.origin.x, self.grandTotalCost.frame.origin.y, labelWidth, self.grandTotalCost.frame.size.height);
     self.grandTotalCost.frame = totalFrame;
     
-    CGFloat separatorWidth = self.view.bounds.size.width - 120;
+    CGFloat separatorWidth = self.view.bounds.size.width - 120.0;
     CGRect separatorFrame = CGRectMake(self.separotorView.frame.origin.x, self.separotorView.frame.origin.y, separatorWidth, self.separotorView.frame.size.height);
     self.separotorView.frame = separatorFrame;
+    
+    CGFloat separatorWidthBottom = self.view.bounds.size.width - 60.0;
+    CGRect sepratorFrameBottom = CGRectMake(self.separtorViewBottom.frame.origin.x, self.separtorViewBottom.frame.origin.y, separatorWidthBottom, self.separtorViewBottom.frame.size.height);
+    self.separtorViewBottom.frame = sepratorFrameBottom;
+    
 }
 
 

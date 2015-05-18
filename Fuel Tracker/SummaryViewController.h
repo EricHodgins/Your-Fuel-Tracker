@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *otherTextLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalTextLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *separotorView;
+@property (strong, nonatomic) IBOutlet UIImageView *separtorViewBottom;
 
 
 @property (strong, nonatomic) IBOutlet GraphicView *pieGraphView;

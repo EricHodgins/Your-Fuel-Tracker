@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="drD-Hh-LOc" customClass="OwnerTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="105"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drD-Hh-LOc" id="g9R-eQ-dpE">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="104"/>
@@ -215,7 +215,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.51330720640000005" green="0.49725671269999999" blue="0.59821164100000002" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.51330720640000005" green="0.49725671269999999" blue="0.59821164100000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="gasPercentage" destination="xz4-oP-Puz" id="LDE-zY-lrU"/>
                                             <outlet property="oilPercentage" destination="TzQ-5S-gsp" id="mSO-jc-Tos"/>
@@ -223,7 +223,11 @@
                                         </connections>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Separator White" id="0OY-nq-7DD">
-                                        <rect key="frame" x="60" y="232" width="208" height="11"/>
+                                        <rect key="frame" x="60" y="237" width="208" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Separator White" id="Nim-wV-bMB">
+                                        <rect key="frame" x="30" y="479" width="208" height="11"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -243,6 +247,7 @@
                         <outlet property="pieGraphView" destination="4lu-50-DSD" id="zLt-kP-Iac"/>
                         <outlet property="scrollView" destination="dUe-yz-iaV" id="Lp4-wx-v0F"/>
                         <outlet property="separotorView" destination="0OY-nq-7DD" id="gs6-Gt-afx"/>
+                        <outlet property="separtorViewBottom" destination="Nim-wV-bMB" id="uMB-0D-3NG"/>
                         <outlet property="totalTextLabel" destination="984-Yu-p21" id="mYc-bo-hc8"/>
                     </connections>
                 </viewController>
